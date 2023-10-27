@@ -1,0 +1,250 @@
+[gd_scene load_steps=30 format=3 uid="uid://bqqw0hv4uy51d"]
+
+[ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_hmtjg"]
+[ext_resource type="Texture2D" uid="uid://grdog4kq545y" path="res://Assets/UI/bg.jpg" id="1_qx6pa"]
+[ext_resource type="FontFile" uid="uid://b6qlx45q5gruy" path="res://Assets/UI/Roboto-Regular.ttf" id="2_dwo3y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vjrq"]
+bg_color = Color(0, 0, 0, 0.792157)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jp72a"]
+bg_color = Color(0.321569, 0.321569, 0.321569, 0.792157)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk8m1"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yevu6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igjed"]
+bg_color = Color(0.321569, 0.321569, 0.321569, 0.792157)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrlxv"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e8dhj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3j0d3"]
+bg_color = Color(0.321569, 0.321569, 0.321569, 0.792157)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmlsi"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lfaj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvlhr"]
+bg_color = Color(0.321569, 0.321569, 0.321569, 0.792157)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g25q0"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e36qw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fmbl"]
+bg_color = Color(0.321569, 0.321569, 0.321569, 0.792157)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ehy8"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5wbe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojenw"]
+bg_color = Color(0.533333, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3x3u1"]
+bg_color = Color(0, 0, 0, 0.627451)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1ikf"]
+bg_color = Color(0.682353, 0.529412, 0.780392, 0.737255)
+corner_radius_top_left = 20
+corner_radius_top_right = 5
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 5
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_g60id"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gdw1x"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yjccb"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3n5ny"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j83vq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l512y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dns5g"]
+
+[node name="Start_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hmtjg")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(561.632, 325.75)
+scale = Vector2(0.620353, 0.620353)
+texture = ExtResource("1_qx6pa")
+
+[node name="Buttons" type="Node2D" parent="."]
+
+[node name="load" type="Button" parent="Buttons"]
+offset_left = 448.0
+offset_top = 144.0
+offset_right = 639.0
+offset_bottom = 193.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_6vjrq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jp72a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qk8m1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yevu6")
+text = "Speicherstand laden"
+
+[node name="new_game" type="Button" parent="Buttons"]
+offset_left = 448.0
+offset_top = 208.0
+offset_right = 639.0
+offset_bottom = 257.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_6vjrq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_igjed")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rrlxv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e8dhj")
+text = "Neues Spiel"
+
+[node name="tutorial" type="Button" parent="Buttons"]
+offset_left = 448.0
+offset_top = 272.0
+offset_right = 639.0
+offset_bottom = 321.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_6vjrq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3j0d3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mmlsi")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7lfaj")
+text = "Tutorial
+"
+
+[node name="menu" type="Button" parent="Buttons"]
+offset_left = 448.0
+offset_top = 336.0
+offset_right = 639.0
+offset_bottom = 385.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_6vjrq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hvlhr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g25q0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_e36qw")
+text = "Menü"
+
+[node name="end" type="Button" parent="Buttons"]
+offset_left = 448.0
+offset_top = 400.0
+offset_right = 639.0
+offset_bottom = 449.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_6vjrq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6fmbl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0ehy8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j5wbe")
+text = "Beenden"
+
+[node name="Menu" type="Node2D" parent="."]
+visible = false
+
+[node name="Bg2" type="Sprite2D" parent="Menu"]
+position = Vector2(561.632, 325.75)
+scale = Vector2(0.620353, 0.620353)
+texture = ExtResource("1_qx6pa")
+
+[node name="ColorRect" type="ColorRect" parent="Menu"]
+offset_left = -8.0
+offset_right = 1168.0
+offset_bottom = 672.0
+color = Color(0, 0, 0, 0.666667)
+
+[node name="Button" type="Button" parent="Menu"]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("2_dwo3y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ojenw")
+text = "X"
+
+[node name="ProgressBar" type="ProgressBar" parent="Menu"]
+offset_left = 256.0
+offset_top = 168.0
+offset_right = 768.0
+offset_bottom = 250.0
+theme_override_styles/background = SubResource("StyleBoxFlat_3x3u1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_o1ikf")
+value = 20.0
+
+[node name="HSlider" type="HSlider" parent="Menu"]
+offset_left = 256.0
+offset_top = 168.0
+offset_right = 768.0
+offset_bottom = 252.0
+theme_override_icons/grabber = SubResource("PlaceholderTexture2D_g60id")
+theme_override_icons/grabber_highlight = SubResource("PlaceholderTexture2D_gdw1x")
+theme_override_icons/grabber_disabled = SubResource("PlaceholderTexture2D_yjccb")
+theme_override_icons/tick = SubResource("PlaceholderTexture2D_3n5ny")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_j83vq")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_l512y")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_dns5g")
+value = 20.0
+
+[connection signal="pressed" from="Buttons/menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Menu/Button" to="." method="_on_button_pressed"]
