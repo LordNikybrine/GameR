@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://sa0xe8f5nonm"]
+[gd_scene load_steps=3 format=3 uid="uid://sa0xe8f5nonm"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_bthbo"]
+[ext_resource type="AudioStream" uid="uid://bvdh8d3e2f04a" path="res://Assets/Sounds/sound.mp3" id="2_346vk"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_bthbo")
 
 [node name="InGame" type="Node2D" parent="."]
+
+[node name="Music_Player" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_346vk")
+volume_db = -20.0
+autoplay = true
