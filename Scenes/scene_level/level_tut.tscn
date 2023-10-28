@@ -1,8 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://2jorqrdpuurm"]
+[gd_scene load_steps=27 format=3 uid="uid://2jorqrdpuurm"]
 
-[ext_resource type="Texture2D" uid="uid://b34n4rtiexag4" path="res://Assets/Level/Tile-Sets (64-64).png" id="1_1gkgn"]
-[ext_resource type="PackedScene" uid="uid://d16lc7pd5m2ec" path="res://Scenes/player.tscn" id="2_ialy2"]
-[ext_resource type="PackedScene" uid="uid://txg0dw7jrc50" path="res://Scenes/scene_object/candle.tscn" id="3_6c5vj"]
+[ext_resource type="Texture2D" uid="uid://b34n4rtiexag4" path="res://Assets/Level/Tile-Sets (64-64).png" id="1_7g451"]
+[ext_resource type="Script" path="res://scripts/level_tut.gd" id="1_8jv28"]
+[ext_resource type="PackedScene" uid="uid://d16lc7pd5m2ec" path="res://Scenes/player.tscn" id="2_oivy0"]
+[ext_resource type="PackedScene" uid="uid://txg0dw7jrc50" path="res://Scenes/scene_object/candle.tscn" id="3_yrry4"]
+[ext_resource type="FontFile" uid="uid://b6qlx45q5gruy" path="res://Assets/UI/Roboto-Regular.ttf" id="4_qqtoh"]
+[ext_resource type="Script" path="res://scripts/Menu.gd" id="4_r0c1g"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6krjw"]
 polygon = PackedVector2Array(-32, -25.5, -22, -32, 32, -32, 32, 32, -32, 32)
@@ -23,7 +26,7 @@ polygon = PackedVector2Array(-32, -32, 32, -32, 32, 24.5, 24.5, 32, -32, 32)
 polygon = PackedVector2Array(-32, -32, 32, -32, 32, -24.5, -32, -24)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xj8hj"]
-texture = ExtResource("1_1gkgn")
+texture = ExtResource("1_7g451")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_6krjw")
@@ -175,7 +178,43 @@ fill = 1
 fill_from = Vector2(0.472477, 0.518349)
 fill_to = Vector2(0.862385, 0.862385)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgs66"]
+bg_color = Color(0.533333, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_53xdy"]
+bg_color = Color(0, 0, 0, 0.627451)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eadnw"]
+bg_color = Color(0.682353, 0.529412, 0.780392, 0.737255)
+corner_radius_top_left = 20
+corner_radius_top_right = 5
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 5
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cihkt"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pttxx"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a7rld"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_prpho"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g7bsg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_at4s0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7qkub"]
+
 [node name="Tutorial" type="Node2D"]
+script = ExtResource("1_8jv28")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_cc3el")
@@ -188,7 +227,7 @@ layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
-layer_1/tile_data = PackedInt32Array(196623, 0, 0, 262159, 0, 1, 327695, 0, 2, 196624, 65536, 0, 262160, 65536, 1, 327696, 65536, 2, 196625, 131072, 0, 262161, 131072, 1, 327697, 131072, 2, 458760, 0, 0, 524296, 0, 1, 589832, 0, 2, 458761, 65536, 0, 524297, 65536, 1, 589833, 65536, 2, 458762, 131072, 0, 524298, 131072, 1, 589834, 131072, 2, 262145, 0, 0, 327681, 0, 1, 393217, 0, 2, 262146, 65536, 0, 327682, 65536, 1, 393218, 65536, 2, 262147, 131072, 0, 327683, 131072, 1, 393219, 131072, 2, 21, 0, 1, 65557, 0, 1, 131093, 0, 1, 196629, 0, 1, 262165, 0, 1, 327701, 0, 1, 393237, 0, 1, 458773, 0, 1, 524309, 0, 1, 589845, 0, 1, 655381, 0, 1, 262158, 262144, 3, 327693, 327680, 4, 458763, 262144, 4, 786431, 131072, 1, 720895, 131072, 1, 589831, 327680, 3, 851967, 0, 0, 786432, 65536, 0, 786433, 131072, 0, 786434, 0, 0, 786435, 65536, 0, 786436, 131072, 0, 786437, 0, 0, 786438, 65536, 0, 786439, 131072, 0, 786440, 0, 0, 786441, 65536, 0, 786442, 131072, 0, 786443, 0, 0, 786444, 65536, 0, 786445, 131072, 0, 786446, 0, 0, 786447, 65536, 0, 786448, 131072, 0, 786449, 0, 0, 786450, 65536, 0, 786451, 131072, 0, 786452, 0, 0, 786453, 65536, 0, 720917, 0, 1)
+layer_1/tile_data = PackedInt32Array(196623, 0, 0, 262159, 0, 1, 327695, 0, 2, 196624, 65536, 0, 262160, 65536, 1, 327696, 65536, 2, 196625, 131072, 0, 262161, 131072, 1, 327697, 131072, 2, 458760, 0, 0, 524296, 0, 1, 589832, 0, 2, 458761, 65536, 0, 524297, 65536, 1, 589833, 65536, 2, 458762, 131072, 0, 524298, 131072, 1, 589834, 131072, 2, 262145, 0, 0, 327681, 0, 1, 393217, 0, 2, 262146, 65536, 0, 327682, 65536, 1, 393218, 65536, 2, 262147, 131072, 0, 327683, 131072, 1, 393219, 131072, 2, 21, 0, 1, 65557, 0, 1, 131093, 0, 1, 196629, 0, 1, 262165, 0, 1, 327701, 0, 1, 393237, 0, 1, 458773, 0, 1, 524309, 0, 1, 589845, 0, 1, 655381, 0, 1, 262158, 262144, 3, 327693, 327680, 4, 458763, 262144, 4, 786431, 131072, 1, 720895, 131072, 1, 589831, 262144, 3, 851967, 0, 0, 786432, 65536, 0, 786433, 131072, 0, 786434, 0, 0, 786435, 65536, 0, 786436, 131072, 0, 786437, 0, 0, 786438, 65536, 0, 786439, 131072, 0, 786440, 0, 0, 786441, 65536, 0, 786442, 131072, 0, 786443, 0, 0, 786444, 65536, 0, 786445, 131072, 0, 786446, 0, 0, 786447, 65536, 0, 786448, 131072, 0, 786449, 0, 0, 786450, 65536, 0, 786451, 131072, 0, 786452, 0, 0, 786453, 65536, 0, 720917, 0, 1, 655359, 131072, 1, 589823, 131072, 1, 524287, 131072, 1, 458751, 131072, 1, 393215, 131072, 1, 327679, 131072, 1, 262143, 131072, 1, 196607, 131072, 1, 131071, 131072, 1, 65535, 131072, 1)
 layer_2/name = "objects"
 layer_2/enabled = true
 layer_2/modulate = Color(1, 1, 1, 1)
@@ -199,20 +238,21 @@ layer_2/tile_data = PackedInt32Array()
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 rotation = -0.462512
-scale = Vector2(1, 1)
 color = Color(0.729412, 0.541176, 0.439216, 1)
 energy = 0.22
 shadow_enabled = true
+shadow_color = Color(0.156863, 0.156863, 0.156863, 0)
 shadow_filter = 2
+shadow_filter_smooth = 2.6
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.505882, 0.505882, 0.505882, 1)
 
 [node name="purple light" type="PointLight2D" parent="."]
-position = Vector2(1309.5, 734.5)
-scale = Vector2(6.60938, 6.07812)
-color = Color(0.654902, 0.290196, 0.72549, 1)
-energy = 2.68
+position = Vector2(1333, 760)
+scale = Vector2(8.57032, 7.88144)
+color = Color(0.745098, 0.321569, 1, 1)
+energy = 2.0
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_2pru2")
 
@@ -223,14 +263,67 @@ limit_left = 0
 limit_top = 0
 limit_bottom = -726
 
-[node name="player" parent="." instance=ExtResource("2_ialy2")]
+[node name="player" parent="." instance=ExtResource("2_oivy0")]
 position = Vector2(74, 727)
 
-[node name="Candle" parent="." instance=ExtResource("3_6c5vj")]
-position = Vector2(353, 254)
+[node name="Candle" parent="." instance=ExtResource("3_yrry4")]
+position = Vector2(353, 142)
 
-[node name="Candle2" parent="." instance=ExtResource("3_6c5vj")]
+[node name="Candle2" parent="." instance=ExtResource("3_yrry4")]
 position = Vector2(799, 158)
 
-[node name="Candle3" parent="." instance=ExtResource("3_6c5vj")]
-position = Vector2(292, 655)
+[node name="Candle3" parent="." instance=ExtResource("3_yrry4")]
+position = Vector2(92, 559)
+
+[node name="Menu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_r0c1g")
+
+[node name="ColorRect" type="ColorRect" parent="Menu"]
+layout_mode = 0
+offset_left = -114.0
+offset_top = -38.0
+offset_right = 1437.0
+offset_bottom = 863.0
+color = Color(0, 0, 0, 0.666667)
+
+[node name="Button" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 66.0
+offset_right = 133.0
+offset_bottom = 119.0
+theme_override_fonts/font = ExtResource("4_qqtoh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgs66")
+text = "X"
+
+[node name="ProgressBar" type="ProgressBar" parent="Menu"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 136.0
+offset_right = 912.0
+offset_bottom = 218.0
+theme_override_styles/background = SubResource("StyleBoxFlat_53xdy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eadnw")
+value = 20.0
+
+[node name="HSlider" type="HSlider" parent="Menu"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 136.0
+offset_right = 912.0
+offset_bottom = 220.0
+theme_override_icons/grabber = SubResource("PlaceholderTexture2D_cihkt")
+theme_override_icons/grabber_highlight = SubResource("PlaceholderTexture2D_pttxx")
+theme_override_icons/grabber_disabled = SubResource("PlaceholderTexture2D_a7rld")
+theme_override_icons/tick = SubResource("PlaceholderTexture2D_prpho")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_g7bsg")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_at4s0")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_7qkub")
+value = 20.0
+
+[connection signal="pressed" from="Menu/Button" to="Menu" method="_on_button_pressed"]

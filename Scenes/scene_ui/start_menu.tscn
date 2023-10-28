@@ -1,6 +1,5 @@
-[gd_scene load_steps=30 format=3 uid="uid://bqqw0hv4uy51d"]
+[gd_scene load_steps=29 format=3 uid="uid://bqqw0hv4uy51d"]
 
-[ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_nff4b"]
 [ext_resource type="Texture2D" uid="uid://grdog4kq545y" path="res://Assets/UI/bg.jpg" id="2_v414q"]
 [ext_resource type="FontFile" uid="uid://b6qlx45q5gruy" path="res://Assets/UI/Roboto-Regular.ttf" id="3_xgpbp"]
 
@@ -135,7 +134,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_nff4b")
 
 [node name="Bg" type="Sprite2D" parent="."]
 position = Vector2(561.632, 325.75)
@@ -154,6 +152,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_jp72a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qk8m1")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yevu6")
 text = "Speicherstand laden"
+metadata/_edit_use_anchors_ = true
 
 [node name="new_game" type="Button" parent="Buttons"]
 offset_left = 448.0
@@ -165,6 +164,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_igjed")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rrlxv")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_e8dhj")
 text = "Neues Spiel"
+metadata/_edit_use_anchors_ = true
 
 [node name="tutorial" type="Button" parent="Buttons"]
 offset_left = 448.0
@@ -177,6 +177,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_mmlsi")
 theme_override_styles/focus = SubResource("StyleBoxFlat_7lfaj")
 text = "Tutorial
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="menu" type="Button" parent="Buttons"]
 offset_left = 448.0
@@ -188,6 +189,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_hvlhr")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_g25q0")
 theme_override_styles/focus = SubResource("StyleBoxFlat_e36qw")
 text = "Menü"
+metadata/_edit_use_anchors_ = true
 
 [node name="end" type="Button" parent="Buttons"]
 offset_left = 448.0
@@ -199,6 +201,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_6fmbl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0ehy8")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_j5wbe")
 text = "Beenden"
+metadata/_edit_use_anchors_ = true
 
 [node name="Menu" type="Node2D" parent="."]
 visible = false
