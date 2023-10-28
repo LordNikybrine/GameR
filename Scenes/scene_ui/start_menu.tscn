@@ -1,8 +1,8 @@
 [gd_scene load_steps=30 format=3 uid="uid://bqqw0hv4uy51d"]
 
-[ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_hmtjg"]
-[ext_resource type="Texture2D" uid="uid://grdog4kq545y" path="res://Assets/UI/bg.jpg" id="1_qx6pa"]
-[ext_resource type="FontFile" uid="uid://b6qlx45q5gruy" path="res://Assets/UI/Roboto-Regular.ttf" id="2_dwo3y"]
+[ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_nff4b"]
+[ext_resource type="Texture2D" uid="uid://grdog4kq545y" path="res://Assets/UI/bg.jpg" id="2_v414q"]
+[ext_resource type="FontFile" uid="uid://b6qlx45q5gruy" path="res://Assets/UI/Roboto-Regular.ttf" id="3_xgpbp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vjrq"]
 bg_color = Color(0, 0, 0, 0.792157)
@@ -135,12 +135,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_hmtjg")
+script = ExtResource("1_nff4b")
 
 [node name="Bg" type="Sprite2D" parent="."]
 position = Vector2(561.632, 325.75)
 scale = Vector2(0.620353, 0.620353)
-texture = ExtResource("1_qx6pa")
+texture = ExtResource("2_v414q")
 
 [node name="Buttons" type="Node2D" parent="."]
 
@@ -206,7 +206,7 @@ visible = false
 [node name="Bg2" type="Sprite2D" parent="Menu"]
 position = Vector2(561.632, 325.75)
 scale = Vector2(0.620353, 0.620353)
-texture = ExtResource("1_qx6pa")
+texture = ExtResource("2_v414q")
 
 [node name="ColorRect" type="ColorRect" parent="Menu"]
 offset_left = -8.0
@@ -219,7 +219,7 @@ offset_left = 24.0
 offset_top = 24.0
 offset_right = 64.0
 offset_bottom = 64.0
-theme_override_fonts/font = ExtResource("2_dwo3y")
+theme_override_fonts/font = ExtResource("3_xgpbp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ojenw")
 text = "X"
 
@@ -246,5 +246,9 @@ theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_l512y")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_dns5g")
 value = 20.0
 
+[connection signal="pressed" from="Buttons/load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Buttons/new_game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Buttons/tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="Buttons/menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Buttons/end" to="." method="_on_end_pressed"]
 [connection signal="pressed" from="Menu/Button" to="." method="_on_button_pressed"]

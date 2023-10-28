@@ -27,3 +27,19 @@ func men():
 
 func _on_button_pressed():
 	$Menu.visible = false
+
+
+func _on_end_pressed():
+	get_tree().quit()
+
+
+func _on_tutorial_pressed():
+	get_tree().change_scene_to_file("res://Scenes/scene_level/tutorial.tscn")
+
+
+func _on_new_game_pressed():
+	get_tree().change_scene_to_file("res://Scenes/scene_ui/choose_storage.tscn")
+
+
+func _on_load_pressed():
+	pass # Speicherstand laden

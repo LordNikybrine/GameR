@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://22pdbqyc1eip"]
+
+[node name="choose_storage" type="Node2D"]
