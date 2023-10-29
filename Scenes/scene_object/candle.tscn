@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://clsrmjgnsxumg" path="res://Assets/Level/7-Objects/6-Candle/8.png" id="8_wi70c"]
 
 [sub_resource type="Gradient" id="Gradient_qlj05"]
-offsets = PackedFloat32Array(0.219355, 0.980645, 1)
+offsets = PackedFloat32Array(0, 0.980645, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.0451613, 0.0451613, 0.0451613, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_xt5eb"]
@@ -19,7 +19,7 @@ gradient = SubResource("Gradient_qlj05")
 use_hdr = true
 fill = 1
 fill_from = Vector2(0.481651, 0.486239)
-fill_to = Vector2(0.165138, 0.853211)
+fill_to = Vector2(0.142202, 0.853211)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_had52"]
 animations = [{
@@ -60,7 +60,7 @@ script = ExtResource("1_hbj5g")
 position = Vector2(1, 17)
 scale = Vector2(4.55366, 4.55366)
 color = Color(0.905882, 0.576471, 0, 1)
-energy = 0.85
+energy = 0.7
 shadow_enabled = true
 shadow_filter = 2
 shadow_filter_smooth = 0.3

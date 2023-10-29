@@ -246,7 +246,7 @@ shadow_filter = 2
 shadow_filter_smooth = 2.6
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.505882, 0.505882, 0.505882, 1)
+color = Color(0.576471, 0.576471, 0.576471, 1)
 
 [node name="purple light" type="PointLight2D" parent="."]
 position = Vector2(1333, 760)
@@ -263,17 +263,22 @@ limit_left = 0
 limit_top = 0
 limit_bottom = -726
 
-[node name="player" parent="." instance=ExtResource("2_oivy0")]
-position = Vector2(74, 727)
+[node name="Objects" type="Node2D" parent="."]
 
-[node name="Candle" parent="." instance=ExtResource("3_yrry4")]
+[node name="Candle" parent="Objects" instance=ExtResource("3_yrry4")]
 position = Vector2(353, 142)
 
-[node name="Candle2" parent="." instance=ExtResource("3_yrry4")]
-position = Vector2(799, 158)
+[node name="Candle4" parent="Objects" instance=ExtResource("3_yrry4")]
+position = Vector2(918, 592)
 
-[node name="Candle3" parent="." instance=ExtResource("3_yrry4")]
+[node name="Candle2" parent="Objects" instance=ExtResource("3_yrry4")]
+position = Vector2(846, 230)
+
+[node name="Candle3" parent="Objects" instance=ExtResource("3_yrry4")]
 position = Vector2(92, 559)
+
+[node name="player" parent="." instance=ExtResource("2_oivy0")]
+position = Vector2(74, 727)
 
 [node name="Menu" type="Control" parent="."]
 visible = false
