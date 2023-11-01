@@ -1,0 +1,148 @@
+[gd_scene load_steps=35 format=3 uid="uid://die73goekvinu"]
+
+[ext_resource type="Texture2D" uid="uid://cx40dpmxfsm2g" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/1.png" id="1_3dgf3"]
+[ext_resource type="Script" path="res://scripts/tutorial_npc.gd" id="1_4mt1s"]
+[ext_resource type="Texture2D" uid="uid://bnvcybkg1a6w1" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/2.png" id="2_ic5fv"]
+[ext_resource type="Texture2D" uid="uid://jfq6q7syiyo4" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/3.png" id="3_bhqb4"]
+[ext_resource type="Texture2D" uid="uid://bed68516ec3c8" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/4.png" id="4_n03fu"]
+[ext_resource type="Texture2D" uid="uid://cmfjkritvkuuc" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/5.png" id="5_ymrsv"]
+[ext_resource type="Texture2D" uid="uid://cofhdijyyd0xq" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/6.png" id="6_2ywly"]
+[ext_resource type="Texture2D" uid="uid://dxuiry5qv72ub" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/7.png" id="7_5c8hg"]
+[ext_resource type="Texture2D" uid="uid://bea2qsav1i27l" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/8.png" id="8_sjern"]
+[ext_resource type="Texture2D" uid="uid://c2fpjudm4225y" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/9.png" id="9_xh3jt"]
+[ext_resource type="Texture2D" uid="uid://b7l1qf85se3fk" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/10.png" id="10_oj3q5"]
+[ext_resource type="Texture2D" uid="uid://ttpqy4w1oton" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/11.png" id="11_innj0"]
+[ext_resource type="Texture2D" uid="uid://boy57poy68jvl" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/12.png" id="12_vv438"]
+[ext_resource type="Texture2D" uid="uid://lf50brdq48p2" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/13.png" id="13_3rqpo"]
+[ext_resource type="Texture2D" uid="uid://cnu1pu1rggxom" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/14.png" id="14_jvjys"]
+[ext_resource type="Texture2D" uid="uid://dnqvr3slh3vju" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/15.png" id="15_2e0gm"]
+[ext_resource type="Texture2D" uid="uid://b1kex8cnc15k5" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/16.png" id="16_ejr67"]
+[ext_resource type="Texture2D" uid="uid://d0eevvbhkrsye" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/17.png" id="17_0wyrl"]
+[ext_resource type="Texture2D" uid="uid://ceplqemj28eah" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/18.png" id="18_gtrhd"]
+[ext_resource type="Texture2D" uid="uid://dh0ps0iqkh1f3" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/19.png" id="19_u5hr5"]
+[ext_resource type="Texture2D" uid="uid://k41roim02b2c" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/20.png" id="20_v70dn"]
+[ext_resource type="Texture2D" uid="uid://dsyhf1udex2nj" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/21.png" id="21_gchyo"]
+[ext_resource type="Texture2D" uid="uid://dii0jojf7ovvn" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/22.png" id="22_vhtt1"]
+[ext_resource type="Texture2D" uid="uid://bkc7tley6i8jw" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/23.png" id="23_uva0i"]
+[ext_resource type="Texture2D" uid="uid://7gc51yv8xosx" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/24.png" id="24_157af"]
+[ext_resource type="Texture2D" uid="uid://ccmvsghj1wvay" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/25.png" id="25_2a46k"]
+[ext_resource type="Texture2D" uid="uid://ddalkf2ko0hon" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/26.png" id="26_th65i"]
+[ext_resource type="Texture2D" uid="uid://b2td04xr83bwp" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/27.png" id="27_1ykcy"]
+[ext_resource type="Texture2D" uid="uid://baasclv5v0sam" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/28.png" id="28_ic058"]
+[ext_resource type="Texture2D" uid="uid://c2jluu5fd4ym4" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/29.png" id="29_ctqcu"]
+[ext_resource type="Texture2D" uid="uid://0e7v08ykr1so" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/30.png" id="30_25abf"]
+[ext_resource type="Texture2D" uid="uid://c5hm8md4t66w6" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/31.png" id="31_geijo"]
+[ext_resource type="Texture2D" uid="uid://3hqusfouv1ei" path="res://Assets/Enemys/5-Enemy-Captain/1-Idle/32.png" id="32_d3hlq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uolgq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3dgf3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ic5fv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bhqb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_n03fu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ymrsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2ywly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5c8hg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sjern")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xh3jt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_oj3q5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_innj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vv438")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3rqpo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_jvjys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2e0gm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ejr67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0wyrl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_gtrhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_u5hr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_v70dn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_gchyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_vhtt1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_uva0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_157af")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_2a46k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_th65i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_1ykcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ic058")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ctqcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_25abf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_geijo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_d3hlq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="Tutorial npc" type="Node2D"]
+scale = Vector2(1.4, 1.4)
+script = ExtResource("1_4mt1s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uolgq")
+animation = &"idle"
+frame_progress = 0.0573518
