@@ -5,6 +5,9 @@ var jump_speed = -900
 var gravity = 2000
 var flip = null
 
+func player():
+	pass
+
 func _physics_process(delta):
 	velocity.y += gravity * delta
 	get_input()

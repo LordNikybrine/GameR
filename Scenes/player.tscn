@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://d16lc7pd5m2ec"]
+[gd_scene load_steps=57 format=3 uid="uid://d16lc7pd5m2ec"]
 
 [ext_resource type="Texture2D" uid="uid://btavhimu8xhwq" path="res://Assets/Player/1-Player-Bomb Guy/7-Hit/1.png" id="1_js5nt"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_vjdrf"]
@@ -53,6 +53,7 @@
 [ext_resource type="Texture2D" uid="uid://dkn26q72r6iji" path="res://Assets/Player/1-Player-Bomb Guy/2-Run/12.png" id="50_7fnkw"]
 [ext_resource type="Texture2D" uid="uid://c3vvcj27bfyf5" path="res://Assets/Player/1-Player-Bomb Guy/2-Run/13.png" id="51_82rrb"]
 [ext_resource type="Texture2D" uid="uid://b6r6653nxhd08" path="res://Assets/Player/1-Player-Bomb Guy/2-Run/14.png" id="52_ygt6v"]
+[ext_resource type="PackedScene" uid="uid://xq4oht78534y" path="res://Scenes/scene_object/sword.tscn" id="54_1tgj3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aunc7"]
 animations = [{
@@ -248,3 +249,6 @@ frame_progress = 0.691162
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.14286, 5.71429)
 shape = SubResource("RectangleShape2D_v27hk")
+
+[node name="Sword" parent="." instance=ExtResource("54_1tgj3")]
+position = Vector2(-76.4286, -272.857)

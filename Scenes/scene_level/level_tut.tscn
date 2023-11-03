@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://2jorqrdpuurm"]
+[gd_scene load_steps=35 format=3 uid="uid://2jorqrdpuurm"]
 
 [ext_resource type="Texture2D" uid="uid://b34n4rtiexag4" path="res://Assets/Level/Tile-Sets (64-64).png" id="1_7g451"]
 [ext_resource type="Script" path="res://scripts/level_tut.gd" id="1_8jv28"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://b6qlx45q5gruy" path="res://Assets/UI/Roboto-Regular.ttf" id="4_qqtoh"]
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="4_r0c1g"]
 [ext_resource type="PackedScene" uid="uid://die73goekvinu" path="res://Scenes/enemy & npc scene/tutorial_npc.tscn" id="7_rvwrn"]
+[ext_resource type="PackedScene" uid="uid://ck8ui4xccr2sh" path="res://Scenes/enemy & npc scene/bald_pirate.tscn" id="8_br0l4"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6krjw"]
 polygon = PackedVector2Array(-32, -25.5, -22, -32, 32, -32, 32, 32, -32, 32)
@@ -23,8 +24,17 @@ polygon = PackedVector2Array(-32, -32, 24.5, -32, 32, -27.75, 32, 32, -32, 32)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gxmby"]
 polygon = PackedVector2Array(-32, -32, 32, -32, 32, 24.5, 24.5, 32, -32, 32)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ltvmc"]
-polygon = PackedVector2Array(-32, -32, 32, -32, 32, -24.5, -32, -24)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kcx55"]
+polygon = PackedVector2Array(-32, -32, 32, -32, 32, -24, -26, -23.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mvcsp"]
+polygon = PackedVector2Array(-32, -32, 32, -32, 25.5, -24, -32, -24)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ayoxu"]
+polygon = PackedVector2Array(-32, -32, 32, -32, 32, -24, -32, -24)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bexdr"]
+polygon = PackedVector2Array(-32, -32, 32, -32, 28, -24, -27.5, -24)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xj8hj"]
 texture = ExtResource("1_7g451")
@@ -125,13 +135,13 @@ texture_region_size = Vector2i(64, 64)
 3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:3/0/physics_layer_0/angular_velocity = 0.0
 4:3/0 = 0
-4:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_ltvmc")
+4:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_kcx55")
 4:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:3/0/physics_layer_0/angular_velocity = 0.0
 4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, -25, 32, -23.5, 32, -32)
 4:3/0/physics_layer_0/polygon_0/one_way = true
 5:3/0 = 0
-5:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_ltvmc")
+5:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_ayoxu")
 5:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:3/0/physics_layer_0/angular_velocity = 0.0
 5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, -25, 32, -23.5, 32, -32)
@@ -151,13 +161,13 @@ texture_region_size = Vector2i(64, 64)
 3:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:4/0/physics_layer_0/angular_velocity = 0.0
 4:4/0 = 0
-4:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_ltvmc")
+4:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_mvcsp")
 4:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:4/0/physics_layer_0/angular_velocity = 0.0
 4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, -25, 32, -23.5, 32, -32)
 4:4/0/physics_layer_0/polygon_0/one_way = true
 5:4/0 = 0
-5:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_ltvmc")
+5:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_bexdr")
 5:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:4/0/physics_layer_0/angular_velocity = 0.0
 5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, -25, 32, -23.5, 32, -32)
@@ -214,6 +224,42 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7qkub"]
 
+[sub_resource type="Animation" id="Animation_ct7ee"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wwhpo"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1py5l"]
+_data = {
+"RESET": SubResource("Animation_ct7ee"),
+"fade": SubResource("Animation_wwhpo")
+}
+
 [node name="Tutorial" type="Node2D"]
 script = ExtResource("1_8jv28")
 
@@ -250,16 +296,17 @@ shadow_filter_smooth = 2.6
 color = Color(0.396078, 0.396078, 0.396078, 1)
 
 [node name="purple light" type="PointLight2D" parent="."]
-position = Vector2(1333, 760)
+position = Vector2(1058, 184)
 scale = Vector2(8.57032, 7.88144)
 color = Color(0.745098, 0.321569, 1, 1)
 energy = 2.0
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_2pru2")
+texture_scale = 0.3
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(483, 262)
-zoom = Vector2(0.845, 0.845)
+position = Vector2(483, 269)
+zoom = Vector2(0.83, 0.83)
 limit_left = 0
 limit_top = 0
 limit_bottom = -726
@@ -273,13 +320,13 @@ position = Vector2(353, 142)
 position = Vector2(918, 592)
 
 [node name="Candle2" parent="Objects" instance=ExtResource("3_yrry4")]
-position = Vector2(846, 230)
+position = Vector2(791, 336)
 
 [node name="Candle3" parent="Objects" instance=ExtResource("3_yrry4")]
 position = Vector2(92, 559)
 
 [node name="Tutorial npc" parent="." instance=ExtResource("7_rvwrn")]
-position = Vector2(216, 716)
+position = Vector2(294, 719)
 rotation = 3.14159
 scale = Vector2(1.4, -1.4)
 
@@ -336,5 +383,33 @@ theme_override_styles/slider = SubResource("StyleBoxEmpty_g7bsg")
 theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_at4s0")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_7qkub")
 value = 20.0
+
+[node name="fade" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="fade"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -146.0
+offset_top = -50.0
+offset_right = 1462.0
+offset_bottom = 890.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fade"]
+libraries = {
+"": SubResource("AnimationLibrary_1py5l")
+}
+
+[node name="Bald_Pirate" parent="." instance=ExtResource("8_br0l4")]
+position = Vector2(582, 385)
 
 [connection signal="pressed" from="Menu/Button" to="Menu" method="_on_button_pressed"]

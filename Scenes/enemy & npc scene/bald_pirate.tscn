@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck8ui4xccr2sh"]
+
+[ext_resource type="Script" path="res://scripts/Bald_Pirate.gd" id="1_ofslf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2o2c"]
+size = Vector2(124, 91)
+
+[node name="Bald_Pirate" type="CharacterBody2D"]
+script = ExtResource("1_ofslf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_o2o2c")
