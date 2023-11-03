@@ -241,6 +241,9 @@ size = Vector2(44, 45)
 scale = Vector2(1.4, 1.4)
 script = ExtResource("1_vjdrf")
 
+[node name="Sword" parent="." instance=ExtResource("54_1tgj3")]
+position = Vector2(32.1429, 0.714283)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_aunc7")
 animation = &"idle"
@@ -249,6 +252,3 @@ frame_progress = 0.691162
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.14286, 5.71429)
 shape = SubResource("RectangleShape2D_v27hk")
-
-[node name="Sword" parent="." instance=ExtResource("54_1tgj3")]
-position = Vector2(-76.4286, -272.857)

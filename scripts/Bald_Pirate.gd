@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 var health = 80
 
@@ -8,4 +8,3 @@ func enemy():
 func get_damage(dmg):
 	$AnimatedSprite2D.play("hit")
 	health = health - dmg
-	print(health)

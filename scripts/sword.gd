@@ -8,6 +8,7 @@ func _process(delta):
 	check_input()
 
 func _on_area_2d_body_entered(body):
+	print("entered")
 	if body.has_method("enemy"):
 		enemy_in_range = true
 		enemy_reference = body

@@ -7,7 +7,7 @@
 [ext_resource type="FontFile" uid="uid://b6qlx45q5gruy" path="res://Assets/UI/Roboto-Regular.ttf" id="4_qqtoh"]
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="4_r0c1g"]
 [ext_resource type="PackedScene" uid="uid://die73goekvinu" path="res://Scenes/enemy & npc scene/tutorial_npc.tscn" id="7_rvwrn"]
-[ext_resource type="PackedScene" uid="uid://ck8ui4xccr2sh" path="res://Scenes/enemy & npc scene/bald_pirate.tscn" id="8_br0l4"]
+[ext_resource type="PackedScene" uid="uid://bxgu481yay42u" path="res://Scenes/enemy & npc scene/bald_pirate.tscn" id="8_br0l4"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6krjw"]
 polygon = PackedVector2Array(-32, -25.5, -22, -32, 32, -32, 32, 32, -32, 32)
@@ -409,7 +409,7 @@ libraries = {
 "": SubResource("AnimationLibrary_1py5l")
 }
 
-[node name="Bald_Pirate" parent="." instance=ExtResource("8_br0l4")]
-position = Vector2(582, 385)
+[node name="bald_pirate" parent="." instance=ExtResource("8_br0l4")]
+position = Vector2(599, 418)
 
 [connection signal="pressed" from="Menu/Button" to="Menu" method="_on_button_pressed"]

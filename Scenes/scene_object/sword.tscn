@@ -4,22 +4,7 @@
 [ext_resource type="Script" path="res://scripts/sword.gd" id="1_qqj7n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qox8y"]
-size = Vector2(381, 321)
-
-[sub_resource type="Animation" id="Animation_d3kfh"]
-resource_name = "ht"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("NpcSword:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 1.05941, 0.0]
-}
+size = Vector2(67, 47)
 
 [sub_resource type="Animation" id="Animation_nqjqb"]
 length = 0.001
@@ -36,6 +21,21 @@ tracks/0/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_d3kfh"]
+resource_name = "ht"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NpcSword:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.05941, 0.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xdhex"]
 _data = {
 "RESET": SubResource("Animation_nqjqb"),
@@ -46,17 +46,19 @@ _data = {
 script = ExtResource("1_qqj7n")
 
 [node name="NpcSword" type="Sprite2D" parent="."]
-position = Vector2(222, 168)
-scale = Vector2(18.8125, 18.8125)
+scale = Vector2(3.29688, 3.29688)
 texture = ExtResource("1_aypya")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(248.5, 168.5)
+position = Vector2(6.5, 2.5)
 shape = SubResource("RectangleShape2D_qox8y")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_xdhex")
 }
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
