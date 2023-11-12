@@ -189,41 +189,6 @@ fill = 1
 fill_from = Vector2(0.472477, 0.518349)
 fill_to = Vector2(0.862385, 0.862385)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgs66"]
-bg_color = Color(0.533333, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_53xdy"]
-bg_color = Color(0, 0, 0, 0.627451)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eadnw"]
-bg_color = Color(0.682353, 0.529412, 0.780392, 0.737255)
-corner_radius_top_left = 20
-corner_radius_top_right = 5
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 5
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cihkt"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pttxx"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a7rld"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_prpho"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g7bsg"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_at4s0"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7qkub"]
-
 [sub_resource type="Animation" id="Animation_ct7ee"]
 length = 0.001
 tracks/0/type = "value"
@@ -259,6 +224,41 @@ _data = {
 "RESET": SubResource("Animation_ct7ee"),
 "fade": SubResource("Animation_wwhpo")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgs66"]
+bg_color = Color(0.533333, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_53xdy"]
+bg_color = Color(0, 0, 0, 0.627451)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eadnw"]
+bg_color = Color(0.682353, 0.529412, 0.780392, 0.737255)
+corner_radius_top_left = 20
+corner_radius_top_right = 5
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 5
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cihkt"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pttxx"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a7rld"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_prpho"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g7bsg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_at4s0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7qkub"]
 
 [node name="Tutorial" type="Node2D"]
 script = ExtResource("1_8jv28")
@@ -330,62 +330,15 @@ position = Vector2(294, 719)
 rotation = 3.14159
 scale = Vector2(1.4, -1.4)
 
+[node name="Enemys" type="Node2D" parent="."]
+
+[node name="bald_pirate" parent="Enemys" instance=ExtResource("8_br0l4")]
+position = Vector2(599, 418)
+
 [node name="player" parent="." instance=ExtResource("2_oivy0")]
 position = Vector2(74, 727)
 
-[node name="Menu" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("4_r0c1g")
-
-[node name="ColorRect" type="ColorRect" parent="Menu"]
-layout_mode = 0
-offset_left = -114.0
-offset_top = -38.0
-offset_right = 1437.0
-offset_bottom = 863.0
-color = Color(0, 0, 0, 0.666667)
-
-[node name="Button" type="Button" parent="Menu"]
-layout_mode = 0
-offset_left = 80.0
-offset_top = 66.0
-offset_right = 133.0
-offset_bottom = 119.0
-theme_override_fonts/font = ExtResource("4_qqtoh")
-theme_override_styles/normal = SubResource("StyleBoxFlat_qgs66")
-text = "X"
-
-[node name="ProgressBar" type="ProgressBar" parent="Menu"]
-layout_mode = 0
-offset_left = 400.0
-offset_top = 136.0
-offset_right = 912.0
-offset_bottom = 218.0
-theme_override_styles/background = SubResource("StyleBoxFlat_53xdy")
-theme_override_styles/fill = SubResource("StyleBoxFlat_eadnw")
-value = 20.0
-
-[node name="HSlider" type="HSlider" parent="Menu"]
-layout_mode = 0
-offset_left = 400.0
-offset_top = 136.0
-offset_right = 912.0
-offset_bottom = 220.0
-theme_override_icons/grabber = SubResource("PlaceholderTexture2D_cihkt")
-theme_override_icons/grabber_highlight = SubResource("PlaceholderTexture2D_pttxx")
-theme_override_icons/grabber_disabled = SubResource("PlaceholderTexture2D_a7rld")
-theme_override_icons/tick = SubResource("PlaceholderTexture2D_prpho")
-theme_override_styles/slider = SubResource("StyleBoxEmpty_g7bsg")
-theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_at4s0")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_7qkub")
-value = 20.0
-
 [node name="fade" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -409,7 +362,56 @@ libraries = {
 "": SubResource("AnimationLibrary_1py5l")
 }
 
-[node name="bald_pirate" parent="." instance=ExtResource("8_br0l4")]
-position = Vector2(599, 418)
+[node name="Menu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_r0c1g")
+
+[node name="ColorRect" type="ColorRect" parent="Menu"]
+layout_mode = 0
+offset_left = -114.0
+offset_top = -38.0
+offset_right = 1437.0
+offset_bottom = 863.0
+color = Color(0, 0, 0, 0.666667)
+
+[node name="Button" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 66.0
+offset_right = 170.0
+offset_bottom = 157.0
+scale = Vector2(0.58, 0.58)
+theme_override_fonts/font = ExtResource("4_qqtoh")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgs66")
+text = "X"
+
+[node name="ProgressBar" type="ProgressBar" parent="Menu"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 136.0
+offset_right = 912.0
+offset_bottom = 218.0
+theme_override_styles/background = SubResource("StyleBoxFlat_53xdy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eadnw")
+value = 20.0
+
+[node name="HSlider" type="HSlider" parent="Menu"]
+offset_left = 400.0
+offset_top = 136.0
+offset_right = 912.0
+offset_bottom = 220.0
+theme_override_icons/grabber = SubResource("PlaceholderTexture2D_cihkt")
+theme_override_icons/grabber_highlight = SubResource("PlaceholderTexture2D_pttxx")
+theme_override_icons/grabber_disabled = SubResource("PlaceholderTexture2D_a7rld")
+theme_override_icons/tick = SubResource("PlaceholderTexture2D_prpho")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_g7bsg")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_at4s0")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_7qkub")
+value = 20.0
 
 [connection signal="pressed" from="Menu/Button" to="Menu" method="_on_button_pressed"]
