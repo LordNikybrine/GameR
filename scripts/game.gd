@@ -1,5 +1,8 @@
 extends Node2D
 
+@onready var previous_window = DisplayServer.window_get_mode()
+@onready var current_window = DisplayServer.window_get_mode()
+
 var menu = null
 var instance = null
 var level = null
@@ -56,3 +59,14 @@ func men():
 
 func _on_end_pressed():
 	get_tree().quit()
+
+
+func _on_fullscreen_pressed():
+	current_window = DisplayServer.window_get_mode()
+	if current_window != 4:
+		previous_window = current_window
+		DisplayServer.window_set_mode(4)
+	else:
+		if previous_window == 4:
+			previous_window = 2
+		DisplayServer.window_set_mode(previous_window)

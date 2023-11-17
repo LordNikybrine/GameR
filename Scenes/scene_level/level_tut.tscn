@@ -333,12 +333,13 @@ scale = Vector2(1.4, -1.4)
 [node name="Enemys" type="Node2D" parent="."]
 
 [node name="bald_pirate" parent="Enemys" instance=ExtResource("8_br0l4")]
-position = Vector2(599, 418)
+position = Vector2(599, 413)
 
 [node name="player" parent="." instance=ExtResource("2_oivy0")]
 position = Vector2(74, 727)
 
 [node name="fade" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -401,6 +402,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_eadnw")
 value = 20.0
 
 [node name="HSlider" type="HSlider" parent="Menu"]
+layout_mode = 0
 offset_left = 400.0
 offset_top = 136.0
 offset_right = 912.0

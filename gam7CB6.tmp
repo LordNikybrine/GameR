@@ -214,7 +214,6 @@ text = "Beenden"
 metadata/_edit_use_anchors_ = true
 
 [node name="Menu" type="Node2D" parent="Start_menu"]
-visible = false
 
 [node name="Bg2" type="Sprite2D" parent="Start_menu/Menu"]
 position = Vector2(561.632, 325.75)

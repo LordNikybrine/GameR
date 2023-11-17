@@ -249,6 +249,10 @@ theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_l512y")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_dns5g")
 value = 20.0
 
+[node name="Fullscreen" type="Button" parent="Menu"]
+offset_right = 8.0
+offset_bottom = 8.0
+
 [connection signal="pressed" from="Buttons/load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="Buttons/new_game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="Buttons/tutorial" to="." method="_on_tutorial_pressed"]

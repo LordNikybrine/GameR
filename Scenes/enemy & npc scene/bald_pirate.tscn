@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bxgu481yay42u"]
+[gd_scene load_steps=48 format=3 uid="uid://bxgu481yay42u"]
 
 [ext_resource type="Script" path="res://scripts/bald_pirate.gd" id="1_q841y"]
 [ext_resource type="Texture2D" uid="uid://6lleei75kikf" path="res://Assets/Enemys/2-Enemy-Bald Pirate/8-Hit/1.png" id="2_sb158"]
@@ -43,6 +43,8 @@
 [ext_resource type="Texture2D" uid="uid://dspcd2tvyht1m" path="res://Assets/Enemys/2-Enemy-Bald Pirate/1-Idle/32.png" id="41_6gne0"]
 [ext_resource type="Texture2D" uid="uid://jugdpww0gip" path="res://Assets/Enemys/2-Enemy-Bald Pirate/1-Idle/33.png" id="42_71wk4"]
 [ext_resource type="Texture2D" uid="uid://ch6sqgxhfq3vq" path="res://Assets/Enemys/2-Enemy-Bald Pirate/1-Idle/34.png" id="43_kv0us"]
+[ext_resource type="Texture2D" uid="uid://4mvabqbtg8o1" path="res://Assets/UI/rpg 45.png" id="44_ce1wa"]
+[ext_resource type="Texture2D" uid="uid://cvvmtuxsw36hm" path="res://Assets/UI/123.png" id="45_nlr01"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_auj7x"]
 animations = [{
@@ -187,6 +189,8 @@ animations = [{
 size = Vector2(55, 61)
 
 [node name="bald_pirate" type="CharacterBody2D"]
+position = Vector2(0, -3)
+scale = Vector2(1.155, 1.155)
 script = ExtResource("1_q841y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -195,3 +199,12 @@ animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_lnb8o")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -39.0
+offset_top = -43.0
+offset_right = 41.0
+offset_bottom = -34.0
+max_value = 80.0
+texture_over = ExtResource("44_ce1wa")
+texture_progress = ExtResource("45_nlr01")

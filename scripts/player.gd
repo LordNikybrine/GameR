@@ -34,21 +34,21 @@ func animations():
 	var jump = Input.is_action_pressed("up")
 	
 	if left || right:
-		$AnimatedSprite2D.play("run")
+		$self/AnimatedSprite2D.play("run")
 	if left:
 		flip = true
 	elif right: 
 		flip = false
 	
 	if velocity.x == 0 && velocity.y == 0:
-		$AnimatedSprite2D.play("idle")
+		$self/AnimatedSprite2D.play("idle")
 	
 	if jump:
-		$AnimatedSprite2D.play("jump")
+		$self/AnimatedSprite2D.play("jump")
 
 
 func check_flip():
 	if flip:
-		$AnimatedSprite2D.scale.x = -1
+		$self.scale.x = -1
 	elif !flip:
-		$AnimatedSprite2D.scale.x = 1
+		$self.scale.x = 1
