@@ -14,6 +14,7 @@ func _physics_process(delta):
 	move_and_slide()
 	animations()
 	check_flip()
+	check_for_live()
 
 func get_input():
 	velocity.x = 0
@@ -52,3 +53,11 @@ func check_flip():
 		$self.scale.x = -1
 	elif !flip:
 		$self.scale.x = 1
+
+func check_for_live():
+	if Global.player_health <= 0:
+		die()
+
+func die():
+	Global.death = true
+	self.queue_free()

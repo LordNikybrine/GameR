@@ -242,19 +242,15 @@ scale = Vector2(1.4, 1.4)
 script = ExtResource("1_vjdrf")
 
 [node name="self" type="Node2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="Sword" parent="self" instance=ExtResource("54_1tgj3")]
 position = Vector2(32.1429, 0.714283)
-scale = Vector2(1, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="self"]
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_aunc7")
 animation = &"idle"
 frame_progress = 0.691162
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.14286, 5.71429)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_v27hk")

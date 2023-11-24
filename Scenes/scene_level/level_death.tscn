@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://jl7mt2qcmrx4"]
+
+[node name="deathscreen" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 223.0
+offset_top = 98.0
+offset_right = 875.0
+offset_bottom = 518.0
+text = "Death"
+metadata/_edit_use_anchors_ = true

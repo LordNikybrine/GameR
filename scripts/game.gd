@@ -17,6 +17,8 @@ func _physics_process(delta):
 		$Music_Player.stream_paused = true
 	elif Global.music_vol > 0:
 		$Music_Player.stream_paused = false
+		
+	deathscreen()
 
 func _ready():
 	start_men()
@@ -70,3 +72,10 @@ func _on_fullscreen_pressed():
 		if previous_window == 4:
 			previous_window = 2
 		DisplayServer.window_set_mode(previous_window)
+
+func deathscreen():
+	if Global.death:
+		level.queue_free()
+		Global.lvl = "death"
+		add_level()
+		Global.death = false

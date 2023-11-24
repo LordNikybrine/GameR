@@ -5,6 +5,7 @@ func _ready():
 
 func _physics_process(delta):
 	check_input()
+	$ProgressBar2.value = Global.player_health
 
 func check_input():
 	var Menu = $Menu
