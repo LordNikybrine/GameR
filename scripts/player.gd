@@ -15,6 +15,7 @@ func _physics_process(delta):
 	animations()
 	check_flip()
 	check_for_live()
+	$self/ProgressBar.value = Global.player_health
 
 func get_input():
 	velocity.x = 0

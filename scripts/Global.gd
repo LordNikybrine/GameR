@@ -1,6 +1,7 @@
 extends Node
 
 var music_vol = 0
-var lvl = null
+var level = null
 var player_health = 100
 var death = false
+var max_health = 100

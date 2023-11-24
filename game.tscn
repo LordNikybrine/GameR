@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://sa0xe8f5nonm"]
+[gd_scene load_steps=36 format=3 uid="uid://sa0xe8f5nonm"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_bthbo"]
 [ext_resource type="AudioStream" uid="uid://bvdh8d3e2f04a" path="res://Assets/Sounds/sound.mp3" id="2_346vk"]
@@ -129,26 +129,61 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t2i52"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_678l4"]
+bg_color = Color(0, 0, 0, 0.784314)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5m5t"]
+bg_color = Color(0, 0, 0, 0.54902)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1ijx"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epmug"]
+bg_color = Color(0, 0, 0, 0.784314)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nvtb1"]
+bg_color = Color(0.117647, 0.117647, 0.117647, 0.784314)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_bthbo")
-
-[node name="InGame" type="Node2D" parent="."]
 
 [node name="Music_Player" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_346vk")
 volume_db = -20.0
 autoplay = true
 
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(561.632, 325.75)
+scale = Vector2(0.620353, 0.620353)
+texture = ExtResource("3_rcu7v")
+
+[node name="InGame" type="Node2D" parent="."]
+
 [node name="Start_menu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="Bg" type="Sprite2D" parent="Start_menu"]
-position = Vector2(561.632, 325.75)
-scale = Vector2(0.620353, 0.620353)
-texture = ExtResource("3_rcu7v")
 
 [node name="Buttons" type="Node2D" parent="Start_menu"]
 
@@ -213,21 +248,24 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_gqdw4")
 text = "Beenden"
 metadata/_edit_use_anchors_ = true
 
-[node name="Menu" type="Node2D" parent="Start_menu"]
+[node name="Menu" type="Node2D" parent="."]
 visible = false
 
-[node name="Bg2" type="Sprite2D" parent="Start_menu/Menu"]
-position = Vector2(561.632, 325.75)
-scale = Vector2(0.620353, 0.620353)
-texture = ExtResource("3_rcu7v")
-
-[node name="ColorRect" type="ColorRect" parent="Start_menu/Menu"]
-offset_left = -8.0
-offset_right = 1168.0
-offset_bottom = 672.0
+[node name="ColorRect" type="ColorRect" parent="Menu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -291.0
+offset_right = 3040.0
+offset_bottom = 1508.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 0.666667)
 
-[node name="Button" type="Button" parent="Start_menu/Menu"]
+[node name="Button" type="Button" parent="Menu"]
 offset_left = 24.0
 offset_top = 24.0
 offset_right = 64.0
@@ -236,20 +274,20 @@ theme_override_fonts/font = ExtResource("4_urjvi")
 theme_override_styles/normal = SubResource("StyleBoxFlat_u8blw")
 text = "X"
 
-[node name="ProgressBar" type="ProgressBar" parent="Start_menu/Menu"]
-offset_left = 256.0
-offset_top = 168.0
-offset_right = 768.0
-offset_bottom = 250.0
+[node name="ProgressBar" type="ProgressBar" parent="Menu"]
+offset_left = 347.0
+offset_top = 194.0
+offset_right = 859.0
+offset_bottom = 276.0
 theme_override_styles/background = SubResource("StyleBoxFlat_7x0ts")
 theme_override_styles/fill = SubResource("StyleBoxFlat_jeyye")
 value = 20.0
 
-[node name="HSlider" type="HSlider" parent="Start_menu/Menu"]
-offset_left = 256.0
-offset_top = 168.0
-offset_right = 768.0
-offset_bottom = 252.0
+[node name="HSlider" type="HSlider" parent="Menu"]
+offset_left = 347.0
+offset_top = 194.0
+offset_right = 859.0
+offset_bottom = 278.0
 theme_override_icons/grabber = SubResource("PlaceholderTexture2D_vrhn7")
 theme_override_icons/grabber_highlight = SubResource("PlaceholderTexture2D_t2h2f")
 theme_override_icons/grabber_disabled = SubResource("PlaceholderTexture2D_mq0wm")
@@ -259,15 +297,118 @@ theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_ldy3t")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_t2i52")
 value = 20.0
 
-[node name="Fullscreen" type="Button" parent="Start_menu/Menu"]
-offset_left = 382.0
-offset_top = 272.0
-offset_right = 669.0
-offset_bottom = 307.0
+[node name="Fullscreen" type="Button" parent="Menu"]
+offset_left = 473.0
+offset_top = 298.0
+offset_right = 760.0
+offset_bottom = 333.0
 text = "Fullscreen"
 
+[node name="BackToMainMenu" type="Button" parent="Menu"]
+offset_left = 465.0
+offset_top = 355.0
+offset_right = 1351.0
+offset_bottom = 601.0
+scale = Vector2(0.35, 0.35)
+theme_override_fonts/font = ExtResource("4_urjvi")
+theme_override_font_sizes/font_size = 64
+text = "Zurück zum Hauptmenü"
+
+[node name="Saves" type="Node2D" parent="."]
+
+[node name="Back" type="Button" parent="Saves"]
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_678l4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v5m5t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n1ijx")
+text = "X"
+
+[node name="save1" type="Button" parent="Saves"]
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 658.0
+offset_bottom = 209.0
+scale = Vector2(0.55, 0.55)
+theme_override_fonts/font = ExtResource("4_urjvi")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_epmug")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nvtb1")
+text = "Speicherplatz 1"
+
+[node name="save2" type="Button" parent="Saves"]
+offset_left = 192.0
+offset_top = 256.0
+offset_right = 657.0
+offset_bottom = 401.0
+scale = Vector2(0.55, 0.55)
+theme_override_fonts/font = ExtResource("4_urjvi")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_epmug")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nvtb1")
+text = "Speicherplatz 2"
+
+[node name="save3" type="Button" parent="Saves"]
+offset_left = 200.0
+offset_top = 448.0
+offset_right = 651.0
+offset_bottom = 593.0
+scale = Vector2(0.55, 0.55)
+theme_override_fonts/font = ExtResource("4_urjvi")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_epmug")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nvtb1")
+text = "Speicherplatz 3"
+
+[node name="save4" type="Button" parent="Saves"]
+offset_left = 704.0
+offset_top = 64.0
+offset_right = 1169.0
+offset_bottom = 209.0
+scale = Vector2(0.55, 0.55)
+theme_override_fonts/font = ExtResource("4_urjvi")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_epmug")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nvtb1")
+text = "Speicherplatz 4
+"
+
+[node name="save5" type="Button" parent="Saves"]
+offset_left = 704.0
+offset_top = 256.0
+offset_right = 1169.0
+offset_bottom = 401.0
+scale = Vector2(0.55, 0.55)
+theme_override_fonts/font = ExtResource("4_urjvi")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_epmug")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nvtb1")
+text = "Speicherplatz 5"
+
+[node name="save6" type="Button" parent="Saves"]
+offset_left = 704.0
+offset_top = 448.0
+offset_right = 1169.0
+offset_bottom = 593.0
+scale = Vector2(0.55, 0.55)
+theme_override_fonts/font = ExtResource("4_urjvi")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_epmug")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nvtb1")
+text = "Speicherplatz 6
+"
+
+[connection signal="pressed" from="Start_menu/Buttons/load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="Start_menu/Buttons/tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="Start_menu/Buttons/menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="Start_menu/Buttons/end" to="." method="_on_end_pressed"]
-[connection signal="pressed" from="Start_menu/Menu/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Start_menu/Menu/Fullscreen" to="." method="_on_fullscreen_pressed"]
+[connection signal="pressed" from="Menu/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Menu/Fullscreen" to="." method="_on_fullscreen_pressed"]
+[connection signal="pressed" from="Menu/BackToMainMenu" to="." method="_on_back_to_main_menu_pressed"]
+[connection signal="pressed" from="Saves/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Saves/save1" to="." method="_on_save_1_pressed"]
+[connection signal="pressed" from="Saves/save2" to="." method="_on_save_2_pressed"]
+[connection signal="pressed" from="Saves/save3" to="." method="_on_save_3_pressed"]
+[connection signal="pressed" from="Saves/save4" to="." method="_on_save_4_pressed"]
+[connection signal="pressed" from="Saves/save5" to="." method="_on_save_5_pressed"]
+[connection signal="pressed" from="Saves/save6" to="." method="_on_save_6_pressed"]

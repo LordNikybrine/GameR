@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://d16lc7pd5m2ec"]
+[gd_scene load_steps=60 format=3 uid="uid://d16lc7pd5m2ec"]
 
 [ext_resource type="Texture2D" uid="uid://btavhimu8xhwq" path="res://Assets/Player/1-Player-Bomb Guy/7-Hit/1.png" id="1_js5nt"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_vjdrf"]
@@ -54,6 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://c3vvcj27bfyf5" path="res://Assets/Player/1-Player-Bomb Guy/2-Run/13.png" id="51_82rrb"]
 [ext_resource type="Texture2D" uid="uid://b6r6653nxhd08" path="res://Assets/Player/1-Player-Bomb Guy/2-Run/14.png" id="52_ygt6v"]
 [ext_resource type="PackedScene" uid="uid://xq4oht78534y" path="res://Scenes/scene_object/sword.tscn" id="54_1tgj3"]
+[ext_resource type="FontFile" uid="uid://b6qlx45q5gruy" path="res://Assets/UI/Roboto-Regular.ttf" id="55_86e68"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aunc7"]
 animations = [{
@@ -234,6 +235,20 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gn3mp"]
+bg_color = Color(0, 0, 0, 0.505882)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m5j3m"]
+bg_color = Color(0.611765, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v27hk"]
 size = Vector2(44, 45)
 
@@ -250,6 +265,17 @@ position = Vector2(32.1429, 0.714283)
 sprite_frames = SubResource("SpriteFrames_aunc7")
 animation = &"idle"
 frame_progress = 0.691162
+
+[node name="ProgressBar" type="ProgressBar" parent="self"]
+offset_left = -28.5714
+offset_top = -45.7143
+offset_right = 1091.43
+offset_bottom = 203.286
+scale = Vector2(0.07, 0.07)
+theme_override_fonts/font = ExtResource("55_86e68")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/background = SubResource("StyleBoxFlat_gn3mp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_m5j3m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.14286, 5.71429)

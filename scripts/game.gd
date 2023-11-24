@@ -6,6 +6,7 @@ extends Node2D
 var menu = null
 var instance = null
 var level = null
+var save_path = null
 
 func _process(delta):
 	set_volBar()
@@ -31,21 +32,22 @@ func _on_tutorial_pressed():
 	add_level()
 
 func add_level():
+	Global.player_health = Global.max_health
 	$Start_menu.visible = false
 	instance = load("res://Scenes/scene_level/level_" + str(Global.lvl) + ".tscn")
 	level = instance.instantiate()
 	$InGame.add_child(level)
 
 func set_volBar():
-	$Start_menu/Menu/ProgressBar.value = $Start_menu/Menu/HSlider.value
-	Global.music_vol = $Start_menu/Menu/HSlider.value
+	$Menu/ProgressBar.value = $Menu/HSlider.value
+	Global.music_vol = $Menu/HSlider.value
 
 func check_input():
 	if Input.is_action_just_pressed("esc"):
-		if $Start_menu/Menu.visible == false:
-			$Start_menu/Menu.visible = true
+		if $Menu.visible == false:
+			$Menu.visible = true
 		else:
-			$Start_menu/Menu.visible = false
+			$Menu.visible = false
 
 func _on_button_pressed():
 	men()
@@ -54,10 +56,10 @@ func _on_menu_pressed():
 	men()
 
 func men():
-	if $Start_menu/Menu.visible == false:
-		$Start_menu/Menu.visible = true
+	if $Menu.visible == false:
+		$Menu.visible = true
 	else:
-		$Start_menu/Menu.visible = false
+		$Menu.visible = false
 
 func _on_end_pressed():
 	get_tree().quit()
@@ -79,3 +81,65 @@ func deathscreen():
 		Global.lvl = "death"
 		add_level()
 		Global.death = false
+
+
+func _on_back_to_main_menu_pressed():
+	if $InGame.get_child_count() != 0:
+		level.queue_free()
+	$Start_menu.visible = true
+	$Menu.visible = false
+
+
+func _on_load_pressed():
+	$Start_menu.visible = false
+	$Saves.visible = true
+
+
+func _on_back_pressed():
+	$Start_menu.visible = true
+	$Saves.visible = false
+
+
+func _on_save_1_pressed():
+	save_path = "res://popel1.save"
+
+
+func _on_save_2_pressed():
+	save_path = "res://popel2.save"
+
+
+func _on_save_3_pressed():
+	save_path = "res://popel3.save"
+
+
+func _on_save_4_pressed():
+	save_path = "res://popel4.save"
+
+
+func _on_save_5_pressed():
+	save_path = "res://popel5.save"
+
+
+func _on_save_6_pressed():
+	save_path = "res://popel6.save"
+
+func save_data():
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	file.store_var(Global.max_health)
+	file.store_var(Global.level)
+	print("saved")
+
+func load_data():
+	var save_path = "res://popel.save"
+	var max_health = Global.spieler_health
+	if FileAccess.file_exists(save_path):
+		var file = FileAccess.open(save_path, FileAccess.READ)
+		Global.max_health = file.get_var(Global.max_health)
+		Global.level = file.get_var(Global.level)
+		print(Global.max_health)
+		print(Global.level)
+	else:
+		print("no data saved")
+	
+	if Global.level == null:
+		print("error in level save")
