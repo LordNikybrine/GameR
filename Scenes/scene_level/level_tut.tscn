@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://2jorqrdpuurm"]
+[gd_scene load_steps=24 format=3 uid="uid://2jorqrdpuurm"]
 
 [ext_resource type="Texture2D" uid="uid://b34n4rtiexag4" path="res://Assets/Level/Tile-Sets (64-64).png" id="1_7g451"]
 [ext_resource type="Script" path="res://scripts/level_tut.gd" id="1_8jv28"]
 [ext_resource type="PackedScene" uid="uid://d16lc7pd5m2ec" path="res://Scenes/player.tscn" id="2_oivy0"]
 [ext_resource type="PackedScene" uid="uid://txg0dw7jrc50" path="res://Scenes/scene_object/candle.tscn" id="3_yrry4"]
+[ext_resource type="PackedScene" uid="uid://dcx5tpio8aniv" path="res://Scenes/scene_ui/menu.tscn" id="7_it8dm"]
 [ext_resource type="PackedScene" uid="uid://die73goekvinu" path="res://Scenes/enemy & npc scene/tutorial_npc.tscn" id="7_rvwrn"]
 [ext_resource type="PackedScene" uid="uid://bxgu481yay42u" path="res://Scenes/enemy & npc scene/bald_pirate.tscn" id="8_br0l4"]
 
@@ -324,3 +325,7 @@ color = Color(0, 0, 0, 1)
 libraries = {
 "": SubResource("AnimationLibrary_1py5l")
 }
+
+[node name="Menu" parent="." instance=ExtResource("7_it8dm")]
+offset_top = 56.0
+offset_bottom = 56.0

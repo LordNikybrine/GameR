@@ -28,7 +28,7 @@ func start_men():
 	$Start_menu.visible = true
 
 func _on_tutorial_pressed():
-	Global.lvl = "tut"
+	Global.level = "tut"
 	add_level()
 
 func add_level():
