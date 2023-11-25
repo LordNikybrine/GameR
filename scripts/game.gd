@@ -34,9 +34,10 @@ func _on_tutorial_pressed():
 func add_level():
 	Global.player_health = Global.max_health
 	$Start_menu.visible = false
-	instance = load("res://Scenes/scene_level/level_" + str(Global.lvl) + ".tscn")
+	instance = load("res://Scenes/scene_level/level_" + str(Global.level) + ".tscn")
 	level = instance.instantiate()
 	$InGame.add_child(level)
+	$Bg.visible = false
 
 func set_volBar():
 	$Menu/ProgressBar.value = $Menu/HSlider.value
@@ -102,26 +103,50 @@ func _on_back_pressed():
 
 func _on_save_1_pressed():
 	save_path = "res://popel1.save"
+	load_data()
+	add_level()
+	$Start_menu.visible = false
+	$Saves.visible = false
 
 
 func _on_save_2_pressed():
 	save_path = "res://popel2.save"
+	load_data()
+	add_level()
+	$Start_menu.visible = false
+	$Saves.visible = false
 
 
 func _on_save_3_pressed():
 	save_path = "res://popel3.save"
+	load_data()
+	add_level()
+	$Start_menu.visible = false
+	$Saves.visible = false
 
 
 func _on_save_4_pressed():
 	save_path = "res://popel4.save"
+	load_data()
+	add_level()
+	$Start_menu.visible = false
+	$Saves.visible = false
 
 
 func _on_save_5_pressed():
 	save_path = "res://popel5.save"
+	load_data()
+	add_level()
+	$Start_menu.visible = false
+	$Saves.visible = false
 
 
 func _on_save_6_pressed():
 	save_path = "res://popel6.save"
+	load_data()
+	add_level()
+	$Start_menu.visible = false
+	$Saves.visible = false
 
 func save_data():
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
@@ -130,8 +155,6 @@ func save_data():
 	print("saved")
 
 func load_data():
-	var save_path = "res://popel.save"
-	var max_health = Global.spieler_health
 	if FileAccess.file_exists(save_path):
 		var file = FileAccess.open(save_path, FileAccess.READ)
 		Global.max_health = file.get_var(Global.max_health)
@@ -140,6 +163,11 @@ func load_data():
 		print(Global.level)
 	else:
 		print("no data saved")
+		new_game()
 	
 	if Global.level == null:
 		print("error in level save")
+
+func new_game():
+	Global.level = 1
+	Global.max_health = 100
