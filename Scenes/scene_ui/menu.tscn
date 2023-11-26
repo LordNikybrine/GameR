@@ -1,10 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcx5tpio8aniv"]
+[gd_scene load_steps=8 format=3 uid="uid://dcx5tpio8aniv"]
 
 [ext_resource type="FontFile" uid="uid://b6qlx45q5gruy" path="res://Assets/UI/Roboto-Regular.ttf" id="1_117w8"]
 [ext_resource type="Script" path="res://scripts/menu_1.gd" id="1_t7xpo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mxhm"]
 bg_color = Color(0.160784, 0.160784, 0.160784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dunl7"]
+bg_color = Color(0.27451, 0.145098, 0.133333, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_x1ojh"]
 color = Color(0.184314, 0.0196078, 0.239216, 1)
@@ -25,6 +32,7 @@ grow_end = -1.0
 thickness = 8
 
 [node name="Menu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,6 +40,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t7xpo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -390.0
+offset_top = -176.0
+offset_right = 1505.0
+offset_bottom = 814.0
+color = Color(0, 0, 0, 0.513726)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -45,12 +61,24 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_117w8")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 66
 text = "Settings"
 
 [node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_117w8")
+theme_override_font_sizes/font_size = 26
 theme_override_styles/panel = SubResource("StyleBoxFlat_2mxhm")
+
+[node name="General" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+
+[node name="back" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/General"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_117w8")
+theme_override_font_sizes/font_size = 61
+theme_override_styles/normal = SubResource("StyleBoxFlat_dunl7")
+text = "Zurück zum Hauptmenü"
 
 [node name="Audio" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
@@ -61,6 +89,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_117w8")
 theme_override_font_sizes/font_size = 32
 text = "General (gibt nur musik)"
+vertical_alignment = 1
 
 [node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/TabContainer/Audio"]
 layout_mode = 2
@@ -70,6 +99,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_oeddi")
 value = 15.0
 
 [node name="Video" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/TabContainer/Video"]
@@ -77,14 +107,23 @@ layout_mode = 2
 
 [node name="Button" type="CheckBox" parent="MarginContainer/VBoxContainer/TabContainer/Video"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_117w8")
+theme_override_font_sizes/font_size = 26
 text = "Fullscreen"
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Video"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_117w8")
+theme_override_font_sizes/font_size = 26
+text = "Brightness
+"
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/TabContainer/Video"]
+layout_mode = 2
 
 [node name="Controlls" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
 
-[node name="General" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
-visible = false
-layout_mode = 2
-
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TabContainer/General/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TabContainer/Video/Button" to="." method="_on_button_pressed"]

@@ -8,8 +8,7 @@ func _ready():
 
 func _physics_process(delta):
 	Global.music_vol = $MarginContainer/VBoxContainer/TabContainer/Audio/HSlider.value
-	print($MarginContainer/VBoxContainer/TabContainer/Audio/HSlider.value)
-	print(Global.music_vol)
+	check_input()
 
 
 func _on_button_pressed():
@@ -21,3 +20,17 @@ func _on_button_pressed():
 		if previous_window == 4:
 			previous_window = 2
 		DisplayServer.window_set_mode(previous_window)
+
+
+func check_input():
+	if Input.is_action_just_pressed("esc"):
+		if self.visible == false:
+			self.visible = true
+			get_tree().paused = true
+		else:
+			self.visible = false
+			get_tree().paused = false
+
+
+func _on_back_pressed():
+	pass

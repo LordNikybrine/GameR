@@ -1,7 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://sa0xe8f5nonm"]
+[gd_scene load_steps=37 format=3 uid="uid://sa0xe8f5nonm"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_bthbo"]
 [ext_resource type="AudioStream" uid="uid://bvdh8d3e2f04a" path="res://Assets/Sounds/sound.mp3" id="2_346vk"]
+[ext_resource type="Script" path="res://scripts/Music_Player.gd" id="3_4cjyj"]
 [ext_resource type="Texture2D" uid="uid://grdog4kq545y" path="res://Assets/UI/bg.jpg" id="3_rcu7v"]
 [ext_resource type="FontFile" uid="uid://b6qlx45q5gruy" path="res://Assets/UI/Roboto-Regular.ttf" id="4_urjvi"]
 
@@ -168,19 +169,20 @@ corner_radius_bottom_left = 20
 script = ExtResource("1_bthbo")
 
 [node name="Music_Player" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("2_346vk")
 volume_db = -20.0
 autoplay = true
+script = ExtResource("3_4cjyj")
 
 [node name="Bg" type="Sprite2D" parent="."]
-position = Vector2(561.632, 325.75)
-scale = Vector2(0.620353, 0.620353)
+position = Vector2(615.61, 356)
+scale = Vector2(0.67658, 0.67658)
 texture = ExtResource("3_rcu7v")
 
 [node name="InGame" type="Node2D" parent="."]
 
 [node name="Start_menu" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -193,6 +195,7 @@ offset_left = 448.0
 offset_top = 144.0
 offset_right = 639.0
 offset_bottom = 193.0
+theme_override_fonts/font = ExtResource("4_urjvi")
 theme_override_styles/normal = SubResource("StyleBoxFlat_c7h1r")
 theme_override_styles/hover = SubResource("StyleBoxFlat_pufhp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_a5l8i")
@@ -205,6 +208,7 @@ offset_left = 448.0
 offset_top = 208.0
 offset_right = 639.0
 offset_bottom = 257.0
+theme_override_fonts/font = ExtResource("4_urjvi")
 theme_override_styles/normal = SubResource("StyleBoxFlat_c7h1r")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vo3hi")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qdou6")
@@ -217,6 +221,7 @@ offset_left = 448.0
 offset_top = 272.0
 offset_right = 639.0
 offset_bottom = 321.0
+theme_override_fonts/font = ExtResource("4_urjvi")
 theme_override_styles/normal = SubResource("StyleBoxFlat_c7h1r")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0gsp3")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_isi2q")
@@ -230,6 +235,7 @@ offset_left = 448.0
 offset_top = 336.0
 offset_right = 639.0
 offset_bottom = 385.0
+theme_override_fonts/font = ExtResource("4_urjvi")
 theme_override_styles/normal = SubResource("StyleBoxFlat_c7h1r")
 theme_override_styles/hover = SubResource("StyleBoxFlat_u6mxr")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6hvdj")
@@ -242,6 +248,7 @@ offset_left = 448.0
 offset_top = 400.0
 offset_right = 639.0
 offset_bottom = 449.0
+theme_override_fonts/font = ExtResource("4_urjvi")
 theme_override_styles/normal = SubResource("StyleBoxFlat_c7h1r")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8e5qa")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_u6cr7")
@@ -321,6 +328,8 @@ visible = false
 [node name="Back" type="Button" parent="Saves"]
 offset_right = 64.0
 offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("4_urjvi")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_678l4")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v5m5t")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_n1ijx")

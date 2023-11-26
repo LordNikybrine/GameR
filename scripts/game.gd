@@ -13,12 +13,6 @@ func _process(delta):
 	check_input()
 
 func _physics_process(delta):
-	$Music_Player.volume_db = Global.music_vol / 2 - 40
-	if Global.music_vol == 0:
-		$Music_Player.stream_paused = true
-	elif Global.music_vol > 0:
-		$Music_Player.stream_paused = false
-		
 	deathscreen()
 
 func _ready():
@@ -45,7 +39,7 @@ func set_volBar():
 		Global.music_vol = $Menu/HSlider.value
 
 func check_input():
-	if Input.is_action_just_pressed("esc"):
+	if Input.is_action_just_pressed("esc") && $InGame.get_child_count() == 0:
 		if $Menu.visible == false:
 			$Menu.visible = true
 		else:
