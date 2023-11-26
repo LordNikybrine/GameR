@@ -40,8 +40,9 @@ func add_level():
 	$Bg.visible = false
 
 func set_volBar():
-	$Menu/ProgressBar.value = $Menu/HSlider.value
-	Global.music_vol = $Menu/HSlider.value
+	if $Menu.visible:
+		$Menu/ProgressBar.value = $Menu/HSlider.value
+		Global.music_vol = $Menu/HSlider.value
 
 func check_input():
 	if Input.is_action_just_pressed("esc"):

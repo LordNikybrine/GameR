@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-var run_speed = 350
-var jump_speed = -900
-var gravity = 2000
-var flip = null
+@export var run_speed : int = 350
+@export var  jump_speed : int = -900
+@export var gravity : float= 2000
+var flip : bool = false
 
 func player():
 	pass
