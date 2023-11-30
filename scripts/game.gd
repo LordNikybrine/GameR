@@ -166,3 +166,10 @@ func load_data():
 func new_game():
 	Global.level = 1
 	Global.max_health = 100
+
+
+func _on_new_game_pressed():
+	new_game()
+	add_level()
+	$Start_menu.visible = false
+	$Saves.visible = false
