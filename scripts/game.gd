@@ -173,3 +173,9 @@ func _on_new_game_pressed():
 	add_level()
 	$Start_menu.visible = false
 	$Saves.visible = false
+
+func back():
+	if $InGame.get_child_count() != 0:
+		level.queue_free()
+	$Start_menu.visible = true
+	$Menu.visible = false

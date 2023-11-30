@@ -33,4 +33,4 @@ func check_input():
 
 
 func _on_back_pressed():
-	pass
+	get_parent().get_parent().get_parent().back()
