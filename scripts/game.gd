@@ -8,10 +8,6 @@ var instance = null
 var level = null
 var save_path = null
 
-func _process(delta):
-	set_volBar()
-	check_input()
-
 func _physics_process(delta):
 	deathscreen()
 
@@ -32,18 +28,6 @@ func add_level():
 	level = instance.instantiate()
 	$InGame.add_child(level)
 	$Bg.visible = false
-
-func set_volBar():
-	if $Menu.visible:
-		$Menu/ProgressBar.value = $Menu/HSlider.value
-		Global.music_vol = $Menu/HSlider.value
-
-func check_input():
-	if Input.is_action_just_pressed("esc") && $InGame.get_child_count() == 0:
-		if $Menu.visible == false:
-			$Menu.visible = true
-		else:
-			$Menu.visible = false
 
 func _on_button_pressed():
 	men()
@@ -178,4 +162,5 @@ func back():
 	if $InGame.get_child_count() != 0:
 		level.queue_free()
 	$Start_menu.visible = true
-	$Menu.visible = false
+	$Bg.visible = true
+	get_tree().paused = false

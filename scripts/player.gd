@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var run_speed : int = 350
+var run_speed : int = Global.player_speed
 @export var  jump_speed : int = -900
 @export var gravity : float= 2000
 var flip : bool = false
@@ -10,6 +10,9 @@ func player():
 
 func _physics_process(delta):
 	velocity.y += gravity * delta
+	run_speed = Global.player_speed
+	jump_speed = Global.jump_speed
+	gravity = Global.gravity
 	get_input()
 	move_and_slide()
 	animations()
