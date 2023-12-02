@@ -1,11 +1,69 @@
-[gd_scene format=3 uid="uid://jl7mt2qcmrx4"]
+[gd_scene load_steps=6 format=3 uid="uid://jl7mt2qcmrx4"]
+
+[ext_resource type="Script" path="res://scripts/level_death.gd" id="1_g74mm"]
+[ext_resource type="FontFile" uid="uid://b6qlx45q5gruy" path="res://Assets/UI/Roboto-Regular.ttf" id="1_kb2n1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vquek"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uiso1"]
+bg_color = Color(0.501961, 0.0941176, 0.0941176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vi5y3"]
+bg_color = Color(0, 0.27451, 0.0313726, 1)
 
 [node name="deathscreen" type="Node2D"]
+script = ExtResource("1_g74mm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -268.0
+offset_top = -58.0
+offset_right = 1423.0
+offset_bottom = 873.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0, 0, 0, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 223.0
-offset_top = 98.0
-offset_right = 875.0
-offset_bottom = 518.0
-text = "Death"
-metadata/_edit_use_anchors_ = true
+offset_top = 320.0
+offset_right = 1083.0
+offset_bottom = 722.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/default_color = Color(0.964706, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_kb2n1")
+theme_override_font_sizes/normal_font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_vquek")
+bbcode_enabled = true
+text = "[center]Game Over[center]"
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 360.0
+offset_top = 448.0
+offset_right = 437.0
+offset_bottom = 479.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_uiso1")
+text = "Beenden
+"
+
+[node name="TryAgain" type="Button" parent="."]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 584.0
+offset_top = 448.0
+offset_right = 730.0
+offset_bottom = 479.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+theme_override_styles/normal = SubResource("StyleBoxFlat_vi5y3")
+text = "Erneut Versuchen"
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="TryAgain" to="." method="_on_try_again_pressed"]

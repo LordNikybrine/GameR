@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsn2nkjofauyo"]
+[gd_scene load_steps=7 format=3 uid="uid://dsn2nkjofauyo"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_jgwcw"]
 [ext_resource type="Texture2D" uid="uid://c4kxwvf07knco" path="res://Assets/Level/sheet.png" id="2_hfmr1"]
-[ext_resource type="PackedScene" uid="uid://d16lc7pd5m2ec" path="res://Scenes/player.tscn" id="3_5cck0"]
+[ext_resource type="PackedScene" uid="uid://dcx5tpio8aniv" path="res://Scenes/scene_ui/menu.tscn" id="4_d5xiq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i65l4"]
 texture = ExtResource("2_hfmr1")
@@ -435,6 +435,10 @@ texture = ExtResource("2_hfmr1")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_i65l4")
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jcbtl"]
+a = Vector2(-3, 223)
+b = Vector2(383, 225)
+
 [node name="level1" type="Node2D"]
 script = ExtResource("1_jgwcw")
 
@@ -452,6 +456,17 @@ layer_2/tile_data = PackedInt32Array()
 position = Vector2(184, 103)
 zoom = Vector2(3.135, 3.135)
 
-[node name="player" parent="." instance=ExtResource("3_5cck0")]
-position = Vector2(46, 28)
-scale = Vector2(0.43, 0.43)
+[node name="Menu" parent="." instance=ExtResource("4_d5xiq")]
+visible = false
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 11.0
+offset_bottom = 10.0
+scale = Vector2(0.345, 0.345)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("SegmentShape2D_jcbtl")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -31,18 +31,6 @@ func add_level():
 	$InGame.add_child(level)
 	$Bg.visible = false
 
-func _on_button_pressed():
-	men()
-
-func _on_menu_pressed():
-	men()
-
-func men():
-	if $Menu.visible == false:
-		$Menu.visible = true
-	else:
-		$Menu.visible = false
-
 func _on_end_pressed():
 	get_tree().quit()
 
@@ -60,7 +48,7 @@ func _on_fullscreen_pressed():
 func deathscreen():
 	if Global.death:
 		level.queue_free()
-		Global.lvl = "death"
+		Global.level = "death"
 		add_level()
 		Global.death = false
 
