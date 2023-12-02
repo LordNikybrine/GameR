@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://2jorqrdpuurm"]
+[gd_scene load_steps=25 format=3 uid="uid://2jorqrdpuurm"]
 
 [ext_resource type="Texture2D" uid="uid://b34n4rtiexag4" path="res://Assets/Level/Tile-Sets (64-64).png" id="1_7g451"]
 [ext_resource type="Script" path="res://scripts/level_tut.gd" id="1_8jv28"]
@@ -188,6 +188,9 @@ fill = 1
 fill_from = Vector2(0.472477, 0.518349)
 fill_to = Vector2(0.862385, 0.862385)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhmbc"]
+size = Vector2(10.268, 2.76782)
+
 [sub_resource type="Animation" id="Animation_ct7ee"]
 length = 0.001
 tracks/0/type = "value"
@@ -258,6 +261,12 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_2pru2")
 texture_scale = 0.3
 
+[node name="next_level" type="Area2D" parent="purple light"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="purple light/next_level"]
+position = Vector2(0.233368, 1.38391)
+shape = SubResource("RectangleShape2D_vhmbc")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(624, 232)
 zoom = Vector2(0.865, 0.865)
@@ -323,3 +332,5 @@ offset_left = 16.0
 offset_top = 136.0
 offset_right = 16.0
 offset_bottom = 136.0
+
+[connection signal="body_entered" from="purple light/next_level" to="." method="_on_next_level_body_entered"]

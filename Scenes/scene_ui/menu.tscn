@@ -47,7 +47,7 @@ offset_left = -390.0
 offset_top = -176.0
 offset_right = 1505.0
 offset_bottom = 814.0
-color = Color(0, 0, 0, 0.513726)
+color = Color(0, 0, 0, 0.843137)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -73,10 +73,20 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2mxhm")
 [node name="General" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
 layout_mode = 2
 
-[node name="back" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/General"]
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/TabContainer/General"]
 layout_mode = 2
+
+[node name="back" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/General/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -219.5
+offset_right = 219.5
+offset_bottom = 54.0
+grow_horizontal = 2
 theme_override_fonts/font = ExtResource("1_117w8")
-theme_override_font_sizes/font_size = 61
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_dunl7")
 text = "Zurück zum Hauptmenü"
 
@@ -125,5 +135,5 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/TabContainer/General/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TabContainer/General/Control/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TabContainer/Video/Button" to="." method="_on_button_pressed"]

@@ -23,6 +23,8 @@ func _on_tutorial_pressed():
 
 func add_level():
 	Global.player_health = Global.max_health
+	if $InGame.get_child_count() != 0:
+		$InGame.get_child(0).queue_free()
 	$Start_menu.visible = false
 	instance = load("res://Scenes/scene_level/level_" + str(Global.level) + ".tscn")
 	level = instance.instantiate()
