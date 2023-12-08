@@ -2,8 +2,8 @@ extends Node2D
 
 func _ready():
 	Global.max_level = "1"
-	Global.player_speed = 80
-	Global.jump_speed = -500
+	Global.player_speed = 200
+	Global.jump_speed = -1000
 	Global.gravity = 1600
 
 
