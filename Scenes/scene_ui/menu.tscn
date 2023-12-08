@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcx5tpio8aniv"]
+[gd_scene load_steps=9 format=3 uid="uid://dcx5tpio8aniv"]
 
 [ext_resource type="FontFile" uid="uid://b6qlx45q5gruy" path="res://Assets/UI/Roboto-Regular.ttf" id="1_117w8"]
 [ext_resource type="Script" path="res://scripts/menu_1.gd" id="1_t7xpo"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7ie4k"]
+light_mode = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mxhm"]
 bg_color = Color(0.160784, 0.160784, 0.160784, 1)
@@ -33,6 +36,7 @@ thickness = 8
 
 [node name="Menu" type="Control"]
 process_mode = 3
+material = SubResource("CanvasItemMaterial_7ie4k")
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,6 +46,7 @@ grow_vertical = 2
 script = ExtResource("1_t7xpo")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("CanvasItemMaterial_7ie4k")
 layout_mode = 0
 offset_left = -390.0
 offset_top = -176.0
@@ -50,40 +55,48 @@ offset_bottom = 814.0
 color = Color(0, 0, 0, 0.843137)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+material = SubResource("CanvasItemMaterial_7ie4k")
 layout_mode = 0
 offset_left = 5.0
 offset_right = 1079.0
 offset_bottom = 716.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+material = SubResource("CanvasItemMaterial_7ie4k")
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+material = SubResource("CanvasItemMaterial_7ie4k")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_117w8")
 theme_override_font_sizes/font_size = 66
 text = "Settings"
 
 [node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer"]
+material = SubResource("CanvasItemMaterial_7ie4k")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_117w8")
 theme_override_font_sizes/font_size = 26
 theme_override_styles/panel = SubResource("StyleBoxFlat_2mxhm")
 
 [node name="General" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+material = SubResource("CanvasItemMaterial_7ie4k")
 layout_mode = 2
 
 [node name="Control" type="Control" parent="MarginContainer/VBoxContainer/TabContainer/General"]
+material = SubResource("CanvasItemMaterial_7ie4k")
 layout_mode = 2
 
 [node name="back" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/General/Control"]
+material = SubResource("CanvasItemMaterial_7ie4k")
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -219.5
+offset_top = 16.0
 offset_right = 219.5
-offset_bottom = 54.0
+offset_bottom = 70.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("1_117w8")
 theme_override_font_sizes/font_size = 32
@@ -92,9 +105,11 @@ text = "Zurück zum Hauptmenü"
 
 [node name="Audio" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
+material = SubResource("CanvasItemMaterial_7ie4k")
 layout_mode = 2
 
 [node name="General" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Audio"]
+material = SubResource("CanvasItemMaterial_7ie4k")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_117w8")
 theme_override_font_sizes/font_size = 32
@@ -102,6 +117,7 @@ text = "General (gibt nur musik)"
 vertical_alignment = 1
 
 [node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/TabContainer/Audio"]
+material = SubResource("CanvasItemMaterial_7ie4k")
 layout_mode = 2
 theme_override_styles/slider = SubResource("StyleBoxLine_x1ojh")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_vxme5")
@@ -110,18 +126,22 @@ value = 15.0
 
 [node name="Video" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
+material = SubResource("CanvasItemMaterial_7ie4k")
 layout_mode = 2
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/TabContainer/Video"]
+material = SubResource("CanvasItemMaterial_7ie4k")
 layout_mode = 2
 
 [node name="Button" type="CheckBox" parent="MarginContainer/VBoxContainer/TabContainer/Video"]
+material = SubResource("CanvasItemMaterial_7ie4k")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_117w8")
 theme_override_font_sizes/font_size = 26
 text = "Fullscreen"
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Video"]
+material = SubResource("CanvasItemMaterial_7ie4k")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_117w8")
 theme_override_font_sizes/font_size = 26
@@ -129,10 +149,12 @@ text = "Brightness
 "
 
 [node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/TabContainer/Video"]
+material = SubResource("CanvasItemMaterial_7ie4k")
 layout_mode = 2
 
 [node name="Controlls" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
+material = SubResource("CanvasItemMaterial_7ie4k")
 layout_mode = 2
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TabContainer/General/Control/back" to="." method="_on_back_pressed"]

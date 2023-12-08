@@ -4,6 +4,9 @@ var next_levelr = false
 
 func _ready():
 	$fade/AnimationPlayer.play("fade")
+	Global.player_speed = 350
+	Global.jump_speed = -900
+	Global.gravity = 2000
 
 func _physics_process(delta):
 	next_level()

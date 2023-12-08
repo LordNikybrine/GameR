@@ -331,7 +331,7 @@ radius = 189.642
 
 [node name="bald_pirate" type="CharacterBody2D"]
 position = Vector2(0, -3)
-scale = Vector2(1.155, 1.155)
+scale = Vector2(1.4, 1.4)
 script = ExtResource("1_q841y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
