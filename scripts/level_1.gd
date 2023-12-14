@@ -4,6 +4,7 @@ var a : int = 0
 
 func _ready():
 	Global.max_level = "1"
+	$fade/AnimationPlayer.play("fade")
 #	$player.change_weapon("res://Scenes/scene_object/sword2.tscn")
 
 

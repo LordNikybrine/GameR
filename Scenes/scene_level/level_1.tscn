@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dsn2nkjofauyo"]
+[gd_scene load_steps=20 format=3 uid="uid://dsn2nkjofauyo"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_jgwcw"]
 [ext_resource type="Texture2D" uid="uid://b34n4rtiexag4" path="res://Assets/Level/Tile-Sets (64-64).png" id="2_w5g6p"]
@@ -195,6 +195,42 @@ animations = [{
 radius = 37.0
 height = 114.0
 
+[sub_resource type="Animation" id="Animation_ct7ee"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wwhpo"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1py5l"]
+_data = {
+"RESET": SubResource("Animation_ct7ee"),
+"fade": SubResource("Animation_wwhpo")
+}
+
 [node name="level1" type="Node2D"]
 script = ExtResource("1_jgwcw")
 
@@ -277,6 +313,32 @@ polygon = PackedVector2Array(-180, 63, -99, 534, -69, 717, -60, -15)
 
 [node name="loot" type="Node2D" parent="."]
 position = Vector2(880, 298)
+
+[node name="fade" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 280.0
+offset_top = -25.0
+offset_right = 320.0
+offset_bottom = 15.0
+
+[node name="ColorRect" type="ColorRect" parent="fade"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -552.0
+offset_top = -101.0
+offset_right = 1056.0
+offset_bottom = 839.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fade"]
+libraries = {
+"": SubResource("AnimationLibrary_1py5l")
+}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="animation_finished" from="Chests/Chest_1/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

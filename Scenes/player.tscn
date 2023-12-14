@@ -246,11 +246,9 @@ script = ExtResource("1_vjdrf")
 [node name="self" type="Node2D" parent="."]
 
 [node name="Weapons" type="Node2D" parent="self"]
-scale = Vector2(1, 1)
 
 [node name="Sword" parent="self/Weapons" instance=ExtResource("54_1tgj3")]
 position = Vector2(32.1429, 0.714283)
-scale = Vector2(0.95, 0.95)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="self"]
 position = Vector2(-30.7167, -27.8563)
@@ -272,5 +270,4 @@ texture_progress = ExtResource("57_72d02")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.14286, 6.42857)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_v27hk")

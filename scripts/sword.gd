@@ -1,8 +1,11 @@
 extends Node2D
 
-var enemy_in_range = false
+var enemy_in_range : bool = false
 var enemy_reference = null
-var dmg = 20
+var dmg : int = 20
+
+func _ready():
+	$AnimationPlayer.play("ht")
 
 func _process(delta):
 	check_input()
