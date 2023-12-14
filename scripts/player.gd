@@ -4,6 +4,7 @@ var run_speed : int = Global.player_speed
 @export var  jump_speed : int = -900
 @export var gravity : float= 2000
 var flip : bool = false
+var weapon = null
 
 func player():
 	pass
@@ -65,3 +66,12 @@ func check_for_live():
 func die():
 	Global.death = true
 	self.queue_free()
+
+func change_weapon(weapon_path):
+	if $self/Weapons.get_child_count() != 0:
+		var childs = $self/Weapons.get_child(0)
+		$self/Weapons.remove_child(childs)
+	
+	weapon = load(str(weapon_path))
+	weapon = weapon.instantiate()
+	$self/Weapons.add_child(weapon)

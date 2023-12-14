@@ -1,0 +1,321 @@
+[gd_scene load_steps=27 format=3 uid="uid://sa0xe8f5nonm"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_bthbo"]
+[ext_resource type="AudioStream" uid="uid://bvdh8d3e2f04a" path="res://Assets/Sounds/sound.mp3" id="2_346vk"]
+[ext_resource type="Script" path="res://scripts/Music_Player.gd" id="3_4cjyj"]
+[ext_resource type="Texture2D" uid="uid://grdog4kq545y" path="res://Assets/UI/bg.jpg" id="3_rcu7v"]
+[ext_resource type="FontFile" uid="uid://b6qlx45q5gruy" path="res://Assets/UI/Roboto-Regular.ttf" id="4_urjvi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7h1r"]
+bg_color = Color(0, 0, 0, 0.792157)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pufhp"]
+bg_color = Color(0.321569, 0.321569, 0.321569, 0.792157)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5l8i"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_18ko7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vo3hi"]
+bg_color = Color(0.321569, 0.321569, 0.321569, 0.792157)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qdou6"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ubdg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0gsp3"]
+bg_color = Color(0.321569, 0.321569, 0.321569, 0.792157)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_isi2q"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6n0v"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u6mxr"]
+bg_color = Color(0.321569, 0.321569, 0.321569, 0.792157)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hvdj"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hr76"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8e5qa"]
+bg_color = Color(0.321569, 0.321569, 0.321569, 0.792157)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u6cr7"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gqdw4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_678l4"]
+bg_color = Color(0, 0, 0, 0.784314)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5m5t"]
+bg_color = Color(0, 0, 0, 0.54902)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1ijx"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epmug"]
+bg_color = Color(0, 0, 0, 0.784314)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nvtb1"]
+bg_color = Color(0.117647, 0.117647, 0.117647, 0.784314)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_bthbo")
+
+[node name="Music_Player" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("2_346vk")
+volume_db = -20.0
+autoplay = true
+script = ExtResource("3_4cjyj")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(615.61, 356)
+scale = Vector2(0.67658, 0.67658)
+texture = ExtResource("3_rcu7v")
+
+[node name="InGame" type="Node2D" parent="."]
+
+[node name="Start_menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Buttons" type="Node2D" parent="Start_menu"]
+
+[node name="load" type="Button" parent="Start_menu/Buttons"]
+offset_left = 448.0
+offset_top = 144.0
+offset_right = 639.0
+offset_bottom = 193.0
+theme_override_fonts/font = ExtResource("4_urjvi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_c7h1r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pufhp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a5l8i")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_18ko7")
+text = "Speicherstand laden"
+metadata/_edit_use_anchors_ = true
+
+[node name="new_game" type="Button" parent="Start_menu/Buttons"]
+offset_left = 448.0
+offset_top = 208.0
+offset_right = 639.0
+offset_bottom = 257.0
+theme_override_fonts/font = ExtResource("4_urjvi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_c7h1r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vo3hi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qdou6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0ubdg")
+text = "Neues Spiel"
+metadata/_edit_use_anchors_ = true
+
+[node name="tutorial" type="Button" parent="Start_menu/Buttons"]
+offset_left = 448.0
+offset_top = 272.0
+offset_right = 639.0
+offset_bottom = 321.0
+theme_override_fonts/font = ExtResource("4_urjvi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_c7h1r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0gsp3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_isi2q")
+theme_override_styles/focus = SubResource("StyleBoxFlat_t6n0v")
+text = "Tutorial
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="menu" type="Button" parent="Start_menu/Buttons"]
+offset_left = 448.0
+offset_top = 336.0
+offset_right = 639.0
+offset_bottom = 385.0
+theme_override_fonts/font = ExtResource("4_urjvi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_c7h1r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u6mxr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6hvdj")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8hr76")
+text = "-----"
+metadata/_edit_use_anchors_ = true
+
+[node name="end" type="Button" parent="Start_menu/Buttons"]
+offset_left = 448.0
+offset_top = 400.0
+offset_right = 639.0
+offset_bottom = 449.0
+theme_override_fonts/font = ExtResource("4_urjvi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_c7h1r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8e5qa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u6cr7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gqdw4")
+text = "Beenden"
+metadata/_edit_use_anchors_ = true
+
+[node name="Saves" type="Node2D" parent="."]
+visible = false
+
+[node name="Back" type="Button" parent="Saves"]
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("4_urjvi")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_678l4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v5m5t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n1ijx")
+text = "X"
+
+[node name="save1" type="Button" parent="Saves"]
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 658.0
+offset_bottom = 209.0
+scale = Vector2(0.55, 0.55)
+theme_override_fonts/font = ExtResource("4_urjvi")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_epmug")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nvtb1")
+text = "Speicherplatz 1"
+
+[node name="save2" type="Button" parent="Saves"]
+offset_left = 192.0
+offset_top = 256.0
+offset_right = 657.0
+offset_bottom = 401.0
+scale = Vector2(0.55, 0.55)
+theme_override_fonts/font = ExtResource("4_urjvi")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_epmug")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nvtb1")
+text = "Speicherplatz 2"
+
+[node name="save3" type="Button" parent="Saves"]
+offset_left = 200.0
+offset_top = 448.0
+offset_right = 651.0
+offset_bottom = 593.0
+scale = Vector2(0.55, 0.55)
+theme_override_fonts/font = ExtResource("4_urjvi")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_epmug")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nvtb1")
+text = "Speicherplatz 3"
+
+[node name="save4" type="Button" parent="Saves"]
+offset_left = 704.0
+offset_top = 64.0
+offset_right = 1169.0
+offset_bottom = 209.0
+scale = Vector2(0.55, 0.55)
+theme_override_fonts/font = ExtResource("4_urjvi")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_epmug")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nvtb1")
+text = "Speicherplatz 4
+"
+
+[node name="save5" type="Button" parent="Saves"]
+offset_left = 704.0
+offset_top = 256.0
+offset_right = 1169.0
+offset_bottom = 401.0
+scale = Vector2(0.55, 0.55)
+theme_override_fonts/font = ExtResource("4_urjvi")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_epmug")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nvtb1")
+text = "Speicherplatz 5"
+
+[node name="save6" type="Button" parent="Saves"]
+offset_left = 704.0
+offset_top = 448.0
+offset_right = 1169.0
+offset_bottom = 593.0
+scale = Vector2(0.55, 0.55)
+theme_override_fonts/font = ExtResource("4_urjvi")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_epmug")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nvtb1")
+text = "Speicherplatz 6
+"
+
+[connection signal="pressed" from="Start_menu/Buttons/load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Start_menu/Buttons/new_game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Start_menu/Buttons/tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="Start_menu/Buttons/end" to="." method="_on_end_pressed"]
+[connection signal="pressed" from="Saves/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Saves/save1" to="." method="_on_save_1_pressed"]
+[connection signal="pressed" from="Saves/save2" to="." method="_on_save_2_pressed"]
+[connection signal="pressed" from="Saves/save3" to="." method="_on_save_3_pressed"]
+[connection signal="pressed" from="Saves/save4" to="." method="_on_save_4_pressed"]
+[connection signal="pressed" from="Saves/save5" to="." method="_on_save_5_pressed"]
+[connection signal="pressed" from="Saves/save6" to="." method="_on_save_6_pressed"]

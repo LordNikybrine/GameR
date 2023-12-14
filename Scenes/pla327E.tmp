@@ -237,7 +237,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v27hk"]
-size = Vector2(44, 46.4286)
+size = Vector2(44, 45)
 
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(1.4, 1.4)
@@ -255,9 +255,7 @@ scale = Vector2(0.95, 0.95)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="self"]
 position = Vector2(-30.7167, -27.8563)
 sprite_frames = SubResource("SpriteFrames_aunc7")
-animation = &"run"
-frame = 6
-frame_progress = 0.991501
+animation = &"hit"
 centered = false
 
 [node name="ProgressBar" type="TextureProgressBar" parent="self"]
@@ -271,6 +269,5 @@ texture_over = ExtResource("56_6c5r3")
 texture_progress = ExtResource("57_72d02")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.14286, 6.42857)
-scale = Vector2(1, 1)
+position = Vector2(-2.14286, 5.71429)
 shape = SubResource("RectangleShape2D_v27hk")

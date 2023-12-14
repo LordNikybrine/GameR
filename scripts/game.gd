@@ -22,6 +22,9 @@ func _on_tutorial_pressed():
 	add_level()
 
 func add_level():
+	if $InGame.get_child_count() != 0:
+		var children = $InGame.get_child(0)
+		$InGame.remove_child(children)
 	Global.player_health = Global.max_health
 	if $InGame.get_child_count() != 0:
 		$InGame.get_child(0).queue_free()
@@ -30,6 +33,7 @@ func add_level():
 	level = instance.instantiate()
 	$InGame.add_child(level)
 	$Bg.visible = false
+	print($InGame.get_child_count())
 
 func _on_end_pressed():
 	get_tree().quit()

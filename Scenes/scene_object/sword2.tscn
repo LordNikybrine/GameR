@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://xq4oht78534y"]
+[gd_scene load_steps=9 format=3 uid="uid://da5p2bywxt0hm"]
 
-[ext_resource type="Texture2D" uid="uid://c8gyhcp6yvkuy" path="res://Assets/Weapons/NPC Sword.png" id="1_aypya"]
-[ext_resource type="Script" path="res://scripts/sword.gd" id="1_qqj7n"]
+[ext_resource type="Script" path="res://scripts/sword2.gd" id="1_wy2na"]
+[ext_resource type="Texture2D" uid="uid://bn3rre65d2ldg" path="res://Assets/Weapons/File.png" id="2_bhtcy"]
+[ext_resource type="FontFile" uid="uid://b6qlx45q5gruy" path="res://Assets/UI/Roboto-Regular.ttf" id="3_mt6ea"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qox8y"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n63ux"]
 size = Vector2(67, 47)
 
 [sub_resource type="Animation" id="Animation_nqjqb"]
@@ -67,24 +68,52 @@ _data = {
 "ht": SubResource("Animation_d3kfh")
 }
 
-[node name="Sword" type="Node2D"]
-scale = Vector2(0.95, 0.95)
-script = ExtResource("1_qqj7n")
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y88ln"]
+radius = 71.0
+height = 164.0
 
-[node name="NpcSword" type="Sprite2D" parent="."]
-scale = Vector2(3.29688, 3.29688)
-texture = ExtResource("1_aypya")
+[node name="sword2" type="Node2D"]
+position = Vector2(16, -5)
+script = ExtResource("1_wy2na")
+
+[node name="Sword" type="Sprite2D" parent="."]
+position = Vector2(13.0625, 5.9375)
+scale = Vector2(-1.31641, 1.31641)
+texture = ExtResource("2_bhtcy")
+hframes = 6
+vframes = 5
+frame = 3
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(7.38781, 3.67365)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(6.5, 2.5)
-shape = SubResource("RectangleShape2D_qox8y")
+shape = SubResource("RectangleShape2D_n63ux")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_xdhex")
 }
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[node name="AreaToCollect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaToCollect"]
+position = Vector2(15, 4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_y88ln")
+debug_color = Color(0, 1, 0.329412, 0.419608)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -102.0
+offset_top = -50.0
+offset_right = 604.0
+offset_bottom = 44.0
+scale = Vector2(0.265, 0.265)
+theme_override_fonts/normal_font = ExtResource("3_mt6ea")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "Press E to collect"
+
+[connection signal="body_entered" from="AreaToCollect" to="." method="_on_area_to_collect_body_entered"]
+[connection signal="body_exited" from="AreaToCollect" to="." method="_on_area_to_collect_body_exited"]

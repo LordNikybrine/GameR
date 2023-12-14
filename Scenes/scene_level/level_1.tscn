@@ -1,9 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://dsn2nkjofauyo"]
+[gd_scene load_steps=17 format=3 uid="uid://dsn2nkjofauyo"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_jgwcw"]
 [ext_resource type="Texture2D" uid="uid://b34n4rtiexag4" path="res://Assets/Level/Tile-Sets (64-64).png" id="2_w5g6p"]
 [ext_resource type="PackedScene" uid="uid://d16lc7pd5m2ec" path="res://Scenes/player.tscn" id="4_cqa5x"]
 [ext_resource type="PackedScene" uid="uid://dcx5tpio8aniv" path="res://Scenes/scene_ui/menu.tscn" id="4_d5xiq"]
+[ext_resource type="Texture2D" uid="uid://bohm414vg5agv" path="res://Assets/Level/7-Objects/Wooden Chest 2/Wooden Chest 2 - frame  00.png" id="5_52327"]
+[ext_resource type="Texture2D" uid="uid://c7w0qb11f7qav" path="res://Assets/Level/7-Objects/Wooden Chest 2/Wooden Chest 2 - frame  01.png" id="6_wsy8k"]
+[ext_resource type="Texture2D" uid="uid://bpm5fw4ubs68i" path="res://Assets/Level/7-Objects/Wooden Chest 2/Wooden Chest 2 - frame  02.png" id="7_p4a7q"]
+[ext_resource type="Texture2D" uid="uid://bk8nbxn1m2nlp" path="res://Assets/Level/7-Objects/Wooden Chest 2/Wooden Chest 2 - frame  03.png" id="8_oyksk"]
+[ext_resource type="Texture2D" uid="uid://c61dpe1rpo5od" path="res://Assets/Level/7-Objects/Wooden Chest 2/Wooden Chest 2 - frame  04.png" id="9_gt86l"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vcw4q"]
 polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
@@ -158,6 +163,38 @@ sources/0 = SubResource("TileSetAtlasSource_btrbv")
 a = Vector2(-555, 213)
 b = Vector2(1625, 215)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_utgyh"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_52327")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wsy8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_p4a7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_oyksk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gt86l")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cjoxn"]
+radius = 37.0
+height = 114.0
+
 [node name="level1" type="Node2D"]
 script = ExtResource("1_jgwcw")
 
@@ -212,6 +249,23 @@ size_flags_vertical = 4
 position = Vector2(-36, 516)
 shape = SubResource("SegmentShape2D_jcbtl")
 
+[node name="Chests" type="Node2D" parent="."]
+
+[node name="Chest_1" type="Node2D" parent="Chests"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Chests/Chest_1"]
+position = Vector2(881.75, 297.5)
+scale = Vector2(1.676, 1.676)
+sprite_frames = SubResource("SpriteFrames_utgyh")
+animation = &"open"
+
+[node name="chest_1" type="Area2D" parent="Chests/Chest_1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chests/Chest_1/chest_1"]
+position = Vector2(882, 299)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_cjoxn")
+
 [node name="player" parent="." instance=ExtResource("4_cqa5x")]
 position = Vector2(232, 100)
 
@@ -221,4 +275,9 @@ position = Vector2(232, 100)
 position = Vector2(66, -4)
 polygon = PackedVector2Array(-180, 63, -99, 534, -69, 717, -60, -15)
 
+[node name="loot" type="Node2D" parent="."]
+position = Vector2(880, 298)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="Chests/Chest_1/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Chests/Chest_1/chest_1" to="." method="_on_chest_1_body_entered"]
